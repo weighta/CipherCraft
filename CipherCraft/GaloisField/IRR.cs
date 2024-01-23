@@ -12,36 +12,10 @@ namespace CipherCraft
     {
         int[] S_ = new int[2];
         long[] S = new long[2];
-        public int[][][] irr;
         NBase nbase = new NBase();
         public IRR()
         {
-            loadIRRs();
-        }
-        public void loadIRRs()
-        {
-            string[] paths = Directory.GetFiles("GF\\IRR");
-            irr = new int[paths.Length][][];
-            for (int i = 0; i < irr.Length; i++)
-            {
-                try
-                {
-                    string[] buffer = File.ReadAllLines(paths[i]);
-                    irr[i] = new int[buffer.Length][];
-                    for (int j = 0; j < buffer.Length; j++)
-                    {
-                        irr[i][j] = Print.strToIntArr(buffer[j]);
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("There was a problem with loading degree " + (i + 1) + " please check its formatting");
-                }
-            }
-        }
-        public int numAvIRRbyDeg(int a)
-        {
-            return irr[a - 1].Length;
+
         }
         public bool prime(int a)
         {

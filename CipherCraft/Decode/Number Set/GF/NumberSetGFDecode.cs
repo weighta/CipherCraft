@@ -40,6 +40,7 @@ namespace CipherCraft
         {
 
         }
+
         public NumberSetGFDecode(int[] a, int Z_b) : base(a)
         {
             SetZ_b(Z_b);
@@ -59,6 +60,7 @@ namespace CipherCraft
         public override void design()
         {
             checkGFs();
+
             invMATS();
             dictInvMATS();
         }
@@ -95,15 +97,17 @@ namespace CipherCraft
         }
         void invMATS()
         {
-            int len = irr.numAvIRRbyDeg(Z_b[1]);
+            gfp_n.IRRSet(n);
+            int len = gfp_n.irr_.Length;
             invs = new List<INV_MAT>();
             INV_MAT tmp;
-            for (int i = 4; i < len; i++)
+            for (int i = 0; i < len; i++)
             {
+                //Print.say( Z_b[0] + " " + Z_b[1] + " " + i);
                 int[] inv = gfp_n.GaloisFieldMatINVFAST(a, Z_b[0], Z_b[1], gfp_n.getIRRbyIndex(Z_b[0], Z_b[1], i));
                 tmp = new INV_MAT();
                 tmp.A = inv;
-                tmp.irr_used = gfp_n.getIRRbyIndex(Z_b[0], Z_b[1], i);
+                tmp.irr_used = i;
                 tmp.Z_b = Z_b;
                 if (!Matrix.isNull(inv)) invs.Add(tmp);
             }
@@ -112,9 +116,9 @@ namespace CipherCraft
                 string add = "";
                 for (int i = 0; i < invs.Count; i++)
                 {
-                    add += i + ": " + Print.intARRtoHexStr(invs[i].A) + " with p(x) = " + invs[i].irr_used + "\n";
+                    add += invs[i].irr_used + ": " + Print.intARRtoHexStr(invs[i].A) + " with p(x) = " + gfp_n.getIRRbyIndex(Z_b[0], Z_b[1], invs[i].irr_used) + "\n";
                 }
-                logadd("GF Inverse Matricies Found: \n" + add + "over Z_" + invs[0].Z_b[0] + "[" + invs[0].Z_b[1] + "]\n");
+                logadd("GF Inverse Matricies Found Over Z_" + invs[0].Z_b[0] + "[" + invs[0].Z_b[1] + "]:\n\n" + add + invs.Count + "/" + gfp_n.irr_.Length + "\n");
             }
         }
         void dictInvMATS()
@@ -155,25 +159,31 @@ namespace CipherCraft
                 invs[i].A.CopyTo(buffer[i], 0);
             }
             int[][][] reduced = new int[RF.Length][][];
-            for (int i = 0; i < reduced.Length; i++) reduced[i] = gfp_n.Reduce(buffer, RF[i].n, RF[i].p, RF[i].k, RF[i].irr_index);
 
-            string p = "";
-            for (int i = 0; i < reduced.Length; i++)
+            if (buffer.Length > 0)
             {
-                p += RF[i].n + ": " + Print.ARR_TO_STR(reduced[i][0]) + " with p(x) = " + invs[0].irr_used + "\n";
-            }
-            Console.WriteLine(p);
+                for (int i = 0; i < reduced.Length; i++)
+                {
+                    gfp_n.IRRSet((int)Math.Pow(RF[i].p, RF[i].k));
+                    reduced[i] = gfp_n.Reduce(buffer, RF[i].n, RF[i].p, RF[i].k, RF[i].irr_index);
+                }
+                string p = "";
+                for (int i = 0; i < reduced.Length; i++)
+                {
+                    p += RF[i].n + ": " + Print.ARR_TO_STR(reduced[i][0]) + " with p(x) = " + invs[0].irr_used + "\n";
+                }
+                Console.WriteLine(p);
 
-            for (int i = 0; i < reduced.Length; i++)
-            {
-                string[] search = Print.intARRtoStrARR(reduced[i], phase);
-                //Print.say(search);
-                string decode = dict.dictionaryCheck(search, 4, 0);
-                logadd("Dictionary with reduction Z_" + RF[i].p + "[" + RF[i].n + "]");
-                logadd(decode + "\n");
+                for (int i = 0; i < reduced.Length; i++)
+                {
+                    string[] search = Print.intARRtoStrARR(reduced[i], phase);
+                    //Print.say(search);
+                    string decode = dict.dictionaryCheck(search, 4, 0);
+                    logadd("Dictionary with reduction Z_" + RF[i].p + "[" + RF[i].n + "]");
+                    logadd(decode + "\n");
+                }
             }
-
-            
+            else logadd("No inv matricies found over " + gfp_n.irr_.Length + " irreducibles");
         }
     }
 }

@@ -110,6 +110,15 @@ namespace CipherCraft
             }
             return ret;
         }
+        public static string[] intARRARRtoStrARR(int[][] a)
+        {
+            string[] ret = new string[a.Length];
+            for (int i = 0; i < a.Length; i++)
+            {
+                ret[i] = ARR_TO_STR(a[i]);
+            }
+            return ret;
+        }
         public static string ARR_TO_STR(long[] a)
         {
             string ret = "";
@@ -176,6 +185,87 @@ namespace CipherCraft
             for (int i = 0; i < ret.Length; i++)
             {
                 ret[i] = a[i];
+            }
+            return ret;
+        }
+        public static int[][] strToNumArray(string[] a)
+        {
+            int[][] ret = new int[a.Length][];
+            for (int i = 0; i < a.Length; i++)
+            {
+                string[] b = a[i].Split(' ');
+                ret[i] = new int[b.Length];
+                for (int j = 0; j < ret[i].Length; j++) ret[i][j] = Convert.ToInt32(b[j]);
+            }
+            return ret;
+        }
+        public static int[][] strToNumArray(string[] a, int format)
+        {
+            int[][] ret = new int[a.Length][];
+            if (format == 16)
+            {
+                for (int i = 0; i < a.Length; i++)
+                {
+                    string[] b = a[i].Split(' ');
+                    ret[i] = new int[b.Length];
+                    for (int j = 0; j < ret[i].Length; j++) ret[i][j] = Convert.ToInt32(b[j], format);
+                }
+            }
+            return ret;
+        }
+        public static string byteArrayToString(byte[][] a)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i != 0) ret += '\n';
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    if (j != 0) ret += ' ';
+                    ret += a[i][j].ToString("2X");
+                }
+            }
+            return ret;    
+        }
+        public static string intArrayToHexadecimalString(int[][] a)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i != 0) ret += '\n';
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    if (j != 0) ret += ' ';
+                    ret += ((byte)a[i][j]).ToString("X2");
+                }
+            }
+            return ret;
+        }
+        public static byte[] strToByteArray(string a)
+        {
+            string[] b = a.Split('\n');
+            byte[] ret = new byte[(int)Math.Pow(b.Length, 2)];
+            for (int i = 0; i < b.Length; i++)
+            {
+                string[] row = b[i].Split(' ');
+                for (int j = 0; j < row.Length; j++)
+                {
+                    ret[(i * b.Length) + j] = (byte)Convert.ToInt32(row[j], 16);
+                }
+            }
+            return ret;
+        }
+        public static string byteArrayToStringMAT(byte[] a, int b)
+        {
+            string ret = "";
+            for (int i = 0; i < b; i++)
+            {
+                if (i != 0) ret += "\n";
+                for (int j = 0; j < b; j++)
+                {
+                    if (j != 0) ret += ' ';
+                    ret += a[(i * b) + j].ToString("X2");
+                }
             }
             return ret;
         }

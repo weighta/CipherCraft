@@ -17,14 +17,17 @@ namespace CipherCraft
         IRR irr = new IRR();
         Matrix mat = new Matrix();
 
+        
         int n;
         int[] mulSub;
         int[] addSub;
         private int[] primes;
+        public int[][] irr_;
+
 
         public GF_P_N()
         {
-            primes = irr.getPrimes(0, 256);
+            primes = irr.getPrimes(0, 25000);
         }
 
         public bool IRR(int[] a, int p) //i think this works now
@@ -62,6 +65,11 @@ namespace CipherCraft
         {
             int[] p_k = new int[2];
             decField(a, ref p_k);
+            string dir = @"GF\IRR\" + p_k[0] + "\\" + p_k[1] + ".txt";
+            if (File.Exists(dir))
+            {
+                return Print.strToNumArray(File.ReadAllLines(dir));
+            }
             List<int[]> prim = new List<int[]>();
             for (int i = a; i < (int)Math.Pow(p_k[0], p_k[1]) << 1; i++)
             {
@@ -71,7 +79,10 @@ namespace CipherCraft
                     prim.Add(b);
                 }
             }
-            return Print.ListToARR(prim);
+            Directory.CreateDirectory(@"GF\IRR\" + p_k[0] + "\\");
+            int[][] ret = Print.ListToARR(prim);
+            File.WriteAllLines(@"GF\IRR\" + p_k[0] + "\\" + p_k[1] + ".txt", Print.intARRARRtoStrARR(ret));
+            return ret;
         }
 
         public int add(int a, int b, int p)
@@ -93,6 +104,18 @@ namespace CipherCraft
             //MessageBox.Show(db);
 
             return reduce(PROD, p, k, IRR); //otherwise dont reduce
+        }
+
+        public int mulinv(int a)
+        {
+            for (int i = 1; i < 256; i++)
+            {
+                if (mulFast(a, i) == 1)
+                {
+                    return i;
+                }
+            }
+            return 0;
         }
 
         public void addFastMake(int p, int k)
@@ -253,6 +276,12 @@ namespace CipherCraft
         }
         int[][] fastFastMatRet;
         int[] nullBuffer;
+        public void GaloisMatMulFastFastSet(int p_k, int irr_index, int A_rows, int B_columns)
+        {
+            IRRSet(p_k);
+            decField(p_k, ref decomp);
+            GaloisMatMulFastFastSet(decomp[0], decomp[1], getIRRbyIndex(decomp[0], decomp[1], irr_index), A_rows, B_columns);
+        }
         public void GaloisMatMulFastFastSet(int p, int k, int irr, int A_rows, int B_columns) //Matrix A must be a square
         {
             mulFastSet(p, k, irr);
@@ -305,30 +334,32 @@ namespace CipherCraft
             }
             return bruteBuffer[0];
         }
+
+        public int[][] GaloisFieldMatINVFull(int[][] a, int GF, int irr_index)
+        {
+            int[] f = decField(GF);
+            IRRSet(GF);
+            GaloisFieldMatINVFAST(ref a, f[0], f[1], getIRRbyIndex(f[0], f[1], irr_index));
+            return a;
+        }
+
         public int[] GaloisFieldMatINVFAST(int[] a, int p, int k, int irr)
         {
             int[] ret = new int[a.Length];
             int[][] ret0 = Matrix.squareMat(a);
 
+            //Print.say(irr + " new");
             GaloisFieldMatINVFAST(ref ret0, p, k, irr);
+            
             Matrix.getRow(ret0, 0, ref ret);
             return ret;
         }
+        public int[][] aug;
         public void GaloisFieldMatINVFAST(ref int[][] A, int p, int k, int irr)
         {
-            //Print.say(p + " " + k + " " + irr);
             GaloisMatMulFastFastSet(p, k, irr, A.Length, 1);
 
-            /*
-            int[][] A = Matrix.squareMat(a);
-
-            int[][] A = new int[3][];
-            A[0] = new int[] { 22, 27, 18 };
-            A[1] = new int[] { 18, 28, 5 };
-            A[2] = new int[] { 4, 17, 1 };
-            */
-
-            int[][] aug = new int[A.Length][];
+            aug = new int[A.Length][];
             int[] tmp = new int[A.Length << 1];
             bool inversefound = false;
             for (int i = 0; i < A.Length; i++) //create augment
@@ -340,56 +371,60 @@ namespace CipherCraft
                 }
                 aug[i][A.Length + i] = 1;
             }
-            Print.print(aug);
-            for (int i = 0; i < A.Length; i++) //diag ones
+            for (int i = 0; i < A.Length; i++)
             {
-                bool onefound = false;
-                for (int j = 1; j < n; j++)
+                if (i <= 7)
                 {
-                    if (mulFast(aug[i][i], j) == 1)
+                    //diag ones
+                    bool onefound = false;
+                    for (int j = 1; j < n; j++)
                     {
-                        mulRow(ref aug, i, j);
-                        //Print.say(aug);
-                        onefound = true;
-                    }
-                }
-                //string ps = "p's = ";
-                if (onefound)
-                {
-
-                    //work on zeros
-                    for (int j = 0; j < A.Length - 1; j++)
-                    {
-                        int row = (i + j + 1) % aug.Length;
-                        bool znf = true; //zero NOT found
-                        for (int l = 0; l < n; l++)
+                        if (mulFast(aug[i][i], j) == 1)
                         {
-                            if (addFast(aug[(row) % aug.Length][i], l) == 0)
+                            mulRow(ref aug, i, j);
+                            //Print.say(aug);
+                            onefound = true;
+                        }
+                    }
+                    //string ps = "p's = ";
+                    if (onefound)
+                    {
+
+                        //work on zeros
+                        for (int j = 0; j < A.Length - 1; j++)
+                        {
+                            int row = (i + j + 1) % aug.Length;
+                            bool znf = true; //zero NOT found
+                            for (int l = 0; l < n; l++)
                             {
-                                //ps += l + ", ";
-                                Matrix.getRow(aug, i, ref tmp);
-                                mulRow(ref tmp, l);
-                                addRow(ref aug, row, tmp);
-                                //Print.say(aug);
-                                znf = false;
-                                //found, so apply to row
-                                if (i == A.Length - 1 && j == A.Length - 2) inversefound = true;
+                                if (addFast(aug[(row) % aug.Length][i], l) == 0)
+                                {
+                                    //ps += l + ", ";
+                                    Matrix.getRow(aug, i, ref tmp);
+                                    mulRow(ref tmp, l);
+                                    addRow(ref aug, row, tmp);
+                                    //Print.say(aug);
+                                    znf = false;
+                                    //found, so apply to row
+                                    if (i == A.Length - 1 && j == A.Length - 2) inversefound = true;
+                                }
+                            }
+                            if (znf)
+                            {
+                                Print.print("0 cannot be solved at (" + i + ", " + row + ")");
+                                i = A.Length;
+                                j = A.Length;
                             }
                         }
-                        if (znf)
-                        {
-                            Print.print("0 cannot be solved at (" + i + ", " + row + ")");
-                            i = A.Length;
-                            j = A.Length;
-                        }
+                        //Print.say(aug);
+                        //Print.printhex(aug);
+                        //MessageBox.Show(ps);
                     }
-                    //Print.printhex(aug);
-                    //MessageBox.Show(ps);
-                }
-                else
-                {
-                    Print.print("1 cannot be solved at row " + i);
-                    i = A.Length;
+                    else
+                    {
+                        //Print.print("1 cannot be solved at row " + i);
+                        i = A.Length;
+                    }
                 }
             }
             if (inversefound)
@@ -401,14 +436,13 @@ namespace CipherCraft
                         A[i][j] = aug[i][A.Length + j];
                     }
                 }
-                Print.print("inverse: ");
-                Print.print(A);
+                //Print.print("inverse: ");
+                //Print.print(A);
             }
             else
             {
                 Matrix.nullMAT(ref A);
             }
-
         }
 
         public void mulRow(ref int[][] A, int row, int a)
@@ -433,9 +467,14 @@ namespace CipherCraft
             }
         }
 
-        public int getIRRbyIndex(int p, int k, int i)
+        public void IRRSet(int p_k) //Read all irreducibles for field p_k
         {
-            return nb.sum(irr.irr[k - 1][i], p);
+            irr_ = IRR(p_k);
+        }
+        public int getIRRbyIndex(int p, int k, int i) //Run IRRSet before use!
+        {
+            //Print.say(irr_[i]);
+            return nb.sum(irr_[i % irr_.Length], p);
         }
         public bool isValidField(int a)
         {
@@ -508,6 +547,12 @@ namespace CipherCraft
             }
             return Print.ListToARR(ret);
         }
+        public int[] decField(int a)
+        {
+            int[] ret = new int[2];
+            decField(a, ref ret);
+            return ret;
+        }
         public void decField(int a, ref int[] fieldDec) //ref p, k
         {
             bool found = false;
@@ -544,6 +589,7 @@ namespace CipherCraft
         public int reduce(int[] PROD, int p, int k, int IRR)
         {
             int[] ret = new int[0];
+            //Print.say(IRR);
             if (PROD.Length > k) //rem div if prod > k
             {
                 ret = PolyD.DIV_REM(PROD, nb.rep(IRR, p));
@@ -574,6 +620,7 @@ namespace CipherCraft
         {
             if (isValidField(gf))
             {
+                //MessageBox.Show(irr_index + " NEW");
                 for (int i = 0; i < a.Length; i++) a[i] = reduce(a[i], p, k, getIRRbyIndex(p, k, irr_index));
             }
             else for (int i = 0; i < a.Length; i++) a[i] %= gf;
@@ -582,6 +629,8 @@ namespace CipherCraft
         {
             int[][] ret = new int[a.Length][];
             for (int i = 0; i < ret.Length; i++) ret[i] = new int[a[i].Length];
+
+            //Print.say(irr_index + " ind");
 
             int[] buffer = new int[a[0].Length];
             for (int i = 0; i < a.Length; i++)

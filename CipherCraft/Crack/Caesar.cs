@@ -85,6 +85,19 @@ namespace CipherCraft
             }
             return ret;
         }
+        public string enc(int[][] a, int phase)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    ret += Convert.ToChar(a[i][j] + phase) + " ";
+                }
+                ret += "\n";
+            }
+            return ret;
+        }
         public string dec(string a, int phase)
         {
             string ret = "";

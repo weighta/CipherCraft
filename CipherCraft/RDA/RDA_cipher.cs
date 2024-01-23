@@ -500,21 +500,12 @@ namespace CipherCraft
                     {
                         n ^= r[p] * (i ^ (n % (kHash[j] + 25)));
                     }
-                    n ^= key[(j + i) % key.Length];
-                    n = R((int)n);
+                    n ^= key[(j + i) % key.Length] ^ 0x37;
                 }
                 kHash[i] = (byte)(kHash[i] ^ (n % 256));
             }
             //RU25
             return RU25(kHash);
-        }
-        private int R(int x)
-        {
-            for (int i = 0; i < r.Length; i++)
-            {
-                x ^= r[i];
-            }
-            return x;
         }
 
         private byte[] addRHashKey(byte[] word, byte[] RHash)

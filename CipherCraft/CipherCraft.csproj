@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cipher\EJMA256.cs" />
     <Compile Include="Crack\Caesar.cs" />
     <Compile Include="Debug\Debug.cs" />
     <Compile Include="Debug\Fonts.cs" />

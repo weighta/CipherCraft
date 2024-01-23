@@ -34,6 +34,7 @@ namespace CipherCraft
         FieldHopper fh = new FieldHopper();
         Integer integer = new Integer();
         NumberSetGFDecode numsetgfdecode = new NumberSetGFDecode();
+        EJMA256 ejma = new EJMA256();
 
         public Form1()
         {
@@ -41,7 +42,10 @@ namespace CipherCraft
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            tabControl2.SelectTab(2);
+            tabControl4.SelectTab(2);
+            invMat();
+            EJMA();
         }
 
         void RDA_TAB()
@@ -245,7 +249,9 @@ namespace CipherCraft
                 int a = num(textBox25.Text);
                 int b = num(textBox26.Text);
                 int irr_index = num(textBox27.Text);
+                gfp_n.IRRSet(gf2_n.pow(p, k));
                 textBox23.Text = gfp_n.mul(p, k, a, b, gfp_n.getIRRbyIndex(p, k, irr_index)) + "";
+                label85.Text = Print.ARR_TO_STR(NBASE.rep(gfp_n.getIRRbyIndex(p, k, irr_index), p));
             }
             catch
             {
@@ -317,7 +323,7 @@ namespace CipherCraft
             }
             catch
             {
-                Print.say(a);
+                //Print.say(a);
             }
             return 0;
         }
@@ -372,6 +378,7 @@ namespace CipherCraft
             {
                 int p = num(textBox24.Text);
                 int k = num(textBox22.Text);
+                gfp_n.IRRSet((int)Math.Pow(p, k));
                 int irr = gfp_n.getIRRbyIndex(p, k, num(textBox40.Text));
                 gfp_n.mulFastSet(p, k, irr);
                 int[][] ans = gfp_n.GaloisMatMulFast(Matrix.squareMat(Print.strToIntArr(textBox38.Text)), Matrix.rowToColumn(Print.strToIntArr(textBox39.Text)), p, k, irr);
@@ -709,9 +716,6 @@ namespace CipherCraft
         {
 
         }
-        private void textBox69_TextChanged(object sender, EventArgs e)
-        {
-        }
         private void textBox71_TextChanged(object sender, EventArgs e)
         {
         }
@@ -779,7 +783,6 @@ namespace CipherCraft
 
         }
 
-
         void labelCorrect(Label a, bool b)
         {
             if (b)
@@ -793,7 +796,6 @@ namespace CipherCraft
                 a.Text = "X";
             }
         }
-
 
         private void textBox72_TextChanged(object sender, EventArgs e)
         {
@@ -928,25 +930,11 @@ namespace CipherCraft
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                NumSetGFDecode(Print.strToIntArr(textBox84.Text));
-            }
-            catch
-            {
-
-            }
+            NumSetGFDecode(Print.strToIntArr(textBox84.Text));
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                NumSetGFDecode(Print.hexStrToIntArr(textBox85.Text));
-            }
-            catch
-            {
-
-            }
+            NumSetGFDecode(Print.hexStrToIntArr(textBox85.Text));
         }
 
         private void textBox86_TextChanged(object sender, EventArgs e)
@@ -967,6 +955,88 @@ namespace CipherCraft
             }
 
             richTextBox22.Text = Print.ARR_TO_STR(gfp_n.IRR(gf));
+        }
+
+        private void textBox84_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox19_TextChanged(object sender, EventArgs e)
+        {
+            MAT_MUL();
+        }
+        void MAT_MUL()
+        {
+            try
+            {
+                int[][] A = Print.strToNumArray(richTextBox19.Text.Split('\n'));
+                int[][] B = Print.strToNumArray(richTextBox20.Text.Split('\n'));
+                gfp_n.GaloisMatMulFastFastSet(num(textBox68.Text), num(textBox69.Text), A.Length, B[0].Length);
+                int[][] C = gfp_n.GaloisMatMulFastFast(A, B);
+                label65.Text = Print.ARR_TO_STR(gfp_n.irr_[num(textBox69.Text) % gfp_n.irr_.Length]);
+                richTextBox21.Text = Print.ARR_TO_STR(C);
+                richTextBox23.Text = caes.enc(C, 65);
+                label66.Text = "pCount: " + gfp_n.irr_.Length;
+            }
+            catch { }
+        }
+
+        private void textBox68_TextChanged_1(object sender, EventArgs e)
+        {
+            MAT_MUL();
+        }
+
+        private void richTextBox20_TextChanged(object sender, EventArgs e)
+        {
+            MAT_MUL();
+        }
+
+        private void richTextBox24_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox25_TextChanged(object sender, EventArgs e)
+        {
+            invMat();
+        }
+        void invMat()
+        {
+            EJMA();
+            int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox25.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
+            richTextBox26.Text = Print.intArrayToHexadecimalString(gfp_n.aug);
+            label84.Text = gfp_n.irr_.Length + " irreducibles";
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void textBox70_TextChanged_1(object sender, EventArgs e)
+        {
+            invMat();
+        }
+
+        private void textBox71_TextChanged_1(object sender, EventArgs e)
+        {
+            invMat();
+        }
+
+        private void richTextBox27_TextChanged(object sender, EventArgs e)
+        {
+            EJMA();
+        }
+
+        void EJMA()
+        {
+            byte[] poop = Print.strToByteArray(richTextBox27.Text);
+            ejma.R_GFM(ref poop, num(textBox70.Text));
+            richTextBox28.Text = ejma.GFM_ToString();
         }
     }
 }

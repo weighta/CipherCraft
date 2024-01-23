@@ -120,6 +120,23 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="richTextBox24.Text" xml:space="preserve">
+    <value>﹃﹄ 3 − ﹖ ➽ ----------➤ ❓ ✾[ ] { } + ✘ ☂ ☁ ▞ ╳ &lt;┄ ⌘⌗ alt @ c⋁rI i . ; "
+0 1 2 3 4 5 7 8 9 a B c D e f F g G h I j k L l i K
+⌚ ⌦ ⌬ ⏱⏰ o O 0 □ ◉ ⟳ ◯ ◴ ☯ ☮ ☹ ⚙⚛ ⚪ ⚱ ⚶⚻ ⛭ ⟲ ❖❍ Q ⊙⊕ ⊠ ≲≬
+jnz $ , call esp 4 100h dword U+7FFF [ ] 9 XOR JZ ADD BYTE - @32 ; CH −SLΕΕP ⅬОС—Οx5fff ! &amp; mоv рtᴦ
+lol a e u i ch 8 N U I Z ì Tw F Y A B Djtá X | H O Kg nn m Ly</value>
+  </data>
+  <data name="richTextBox26.Text" xml:space="preserve">
+    <value>01 00 00 00 00 00 00 00 21 B1 B3 E1 AD FC 02 4A
+00 01 00 00 00 00 00 00 B2 6E 01 0E BF 9E BC D7
+00 00 01 00 00 00 00 00 CA CE CA 94 81 8A BC 05
+00 00 00 01 00 00 00 00 D7 4A D4 E3 EF DC 32 01
+00 00 00 00 01 00 00 00 1A EB DB DA AA EB 6E CD
+00 00 00 00 00 01 00 00 5C D6 B8 24 17 23 55 F9
+00 00 00 00 00 00 01 00 3A D1 2D 2A 88 F5 A9 4A
+00 00 00 00 00 00 00 01 EC F4 BF E5 04 2B 34 7E</value>
+  </data>
   <metadata name="FRAME_TIMER.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>

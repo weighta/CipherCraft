@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +71,7 @@
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.richTextBox24 = new System.Windows.Forms.RichTextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -113,6 +115,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -167,6 +170,13 @@
             this.textBox74 = new System.Windows.Forms.TextBox();
             this.textBox73 = new System.Windows.Forms.TextBox();
             this.textBox72 = new System.Windows.Forms.TextBox();
+            this.tabPage23 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.richTextBox22 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox67 = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
@@ -189,6 +199,19 @@
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage24 = new System.Windows.Forms.TabPage();
+            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.richTextBox28 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox26 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox27 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox25 = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -271,19 +294,21 @@
             this.textBox85 = new System.Windows.Forms.TextBox();
             this.textBox84 = new System.Windows.Forms.TextBox();
             this.tabPage37 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.richTextBox23 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox21 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox20 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox19 = new System.Windows.Forms.RichTextBox();
             this.FRAME_TIMER = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.richTextBox19 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox20 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox21 = new System.Windows.Forms.RichTextBox();
-            this.tabPage23 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox67 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox22 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -303,7 +328,10 @@
             this.tabControl14.SuspendLayout();
             this.tabPage29.SuspendLayout();
             this.tabPage28.SuspendLayout();
+            this.tabPage23.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage24.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -336,10 +364,8 @@
             this.tabPage36.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel4.SuspendLayout();
-            this.tabPage23.SuspendLayout();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -371,7 +397,7 @@
             // 
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(653, 492);
             this.tabPage1.TabIndex = 0;
@@ -387,7 +413,7 @@
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Location = new System.Drawing.Point(2, 2);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(656, 505);
@@ -404,7 +430,7 @@
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.richTextBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(648, 479);
             this.tabPage2.TabIndex = 0;
@@ -418,7 +444,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(182, 161);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(84, 17);
             this.checkBox1.TabIndex = 7;
@@ -449,7 +475,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(2, 5);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(203, 20);
             this.numericUpDown1.TabIndex = 4;
@@ -462,7 +488,7 @@
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(2, 106);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(260, 51);
             this.richTextBox2.TabIndex = 3;
@@ -471,7 +497,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(266, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(384, 416);
             this.pictureBox1.TabIndex = 2;
@@ -480,7 +506,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(2, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(204, 20);
             this.textBox1.TabIndex = 1;
@@ -490,7 +516,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(2, 50);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(260, 51);
             this.richTextBox1.TabIndex = 0;
@@ -501,7 +527,7 @@
             // 
             this.tabPage3.Controls.Add(this.tabControl8);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(648, 479);
             this.tabPage3.TabIndex = 1;
@@ -545,7 +571,7 @@
             this.tabPage14.Controls.Add(this.textBox54);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage14.Size = new System.Drawing.Size(650, 446);
             this.tabPage14.TabIndex = 0;
             this.tabPage14.Text = "EnigmaV2";
@@ -770,6 +796,7 @@
             // 
             // tabPage19
             // 
+            this.tabPage19.Controls.Add(this.richTextBox24);
             this.tabPage19.Controls.Add(this.label55);
             this.tabPage19.Controls.Add(this.richTextBox12);
             this.tabPage19.Location = new System.Drawing.Point(4, 22);
@@ -778,6 +805,16 @@
             this.tabPage19.TabIndex = 1;
             this.tabPage19.Text = "Plugboard";
             this.tabPage19.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox24
+            // 
+            this.richTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox24.Location = new System.Drawing.Point(5, 129);
+            this.richTextBox24.Name = "richTextBox24";
+            this.richTextBox24.Size = new System.Drawing.Size(633, 210);
+            this.richTextBox24.TabIndex = 2;
+            this.richTextBox24.Text = resources.GetString("richTextBox24.Text");
+            this.richTextBox24.TextChanged += new System.EventHandler(this.richTextBox24_TextChanged);
             // 
             // label55
             // 
@@ -803,7 +840,7 @@
             // 
             this.tabPage4.Controls.Add(this.tabControl4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(648, 479);
             this.tabPage4.TabIndex = 2;
@@ -826,7 +863,7 @@
             this.tabPage8.Controls.Add(this.tabControl13);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(649, 448);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "GF(P^M)";
@@ -882,6 +919,7 @@
             this.tabPage25.Controls.Add(this.label22);
             this.tabPage25.Controls.Add(this.label21);
             this.tabPage25.Controls.Add(this.textBox22);
+            this.tabPage25.Controls.Add(this.label85);
             this.tabPage25.Controls.Add(this.label19);
             this.tabPage25.Controls.Add(this.textBox23);
             this.tabPage25.Controls.Add(this.label20);
@@ -911,7 +949,7 @@
             this.tabPage25.Controls.Add(this.label8);
             this.tabPage25.Location = new System.Drawing.Point(4, 22);
             this.tabPage25.Name = "tabPage25";
-            this.tabPage25.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage25.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage25.Size = new System.Drawing.Size(650, 420);
             this.tabPage25.TabIndex = 0;
             this.tabPage25.Text = "Math";
@@ -930,7 +968,7 @@
             // textBox47
             // 
             this.textBox47.Location = new System.Drawing.Point(432, 149);
-            this.textBox47.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox47.Margin = new System.Windows.Forms.Padding(2);
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(28, 20);
             this.textBox47.TabIndex = 187;
@@ -1109,7 +1147,7 @@
             // textBox28
             // 
             this.textBox28.Location = new System.Drawing.Point(43, 45);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(2);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(201, 20);
             this.textBox28.TabIndex = 163;
@@ -1129,7 +1167,7 @@
             // textBox29
             // 
             this.textBox29.Location = new System.Drawing.Point(432, 44);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(2);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(28, 20);
             this.textBox29.TabIndex = 165;
@@ -1149,7 +1187,7 @@
             // textBox30
             // 
             this.textBox30.Location = new System.Drawing.Point(481, 46);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox30.Margin = new System.Windows.Forms.Padding(2);
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(159, 20);
             this.textBox30.TabIndex = 167;
@@ -1168,7 +1206,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(375, 181);
+            this.label25.Location = new System.Drawing.Point(326, 181);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(65, 13);
@@ -1177,7 +1215,7 @@
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(378, 197);
+            this.textBox27.Location = new System.Drawing.Point(329, 197);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(41, 20);
             this.textBox27.TabIndex = 160;
@@ -1251,6 +1289,16 @@
             this.textBox22.Text = "8";
             this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
             // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(378, 200);
+            this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(40, 13);
+            this.label85.TabIndex = 152;
+            this.label85.Text = "1 0 2 1";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1291,7 +1339,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(43, 20);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(201, 20);
             this.textBox2.TabIndex = 126;
@@ -1346,7 +1394,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(432, 19);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(28, 20);
             this.textBox3.TabIndex = 129;
@@ -1402,7 +1450,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(481, 21);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(159, 20);
             this.textBox4.TabIndex = 132;
@@ -1501,7 +1549,7 @@
             this.tabPage26.Controls.Add(this.tabControl14);
             this.tabPage26.Location = new System.Drawing.Point(4, 22);
             this.tabPage26.Name = "tabPage26";
-            this.tabPage26.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage26.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage26.Size = new System.Drawing.Size(650, 420);
             this.tabPage26.TabIndex = 1;
             this.tabPage26.Text = "Matrix";
@@ -1534,7 +1582,7 @@
             this.tabPage29.Controls.Add(this.label72);
             this.tabPage29.Location = new System.Drawing.Point(4, 22);
             this.tabPage29.Name = "tabPage29";
-            this.tabPage29.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage29.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage29.Size = new System.Drawing.Size(647, 397);
             this.tabPage29.TabIndex = 0;
             this.tabPage29.Text = "Field Hop";
@@ -1659,7 +1707,7 @@
             // 
             this.tabPage30.Location = new System.Drawing.Point(4, 22);
             this.tabPage30.Name = "tabPage30";
-            this.tabPage30.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage30.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage30.Size = new System.Drawing.Size(647, 397);
             this.tabPage30.TabIndex = 1;
             this.tabPage30.Text = "Visualize";
@@ -1758,6 +1806,72 @@
             this.textBox72.Text = "2";
             this.textBox72.TextChanged += new System.EventHandler(this.textBox72_TextChanged);
             // 
+            // tabPage23
+            // 
+            this.tabPage23.Controls.Add(this.panel5);
+            this.tabPage23.Location = new System.Drawing.Point(4, 22);
+            this.tabPage23.Name = "tabPage23";
+            this.tabPage23.Size = new System.Drawing.Size(650, 420);
+            this.tabPage23.TabIndex = 3;
+            this.tabPage23.Text = "Primitive";
+            this.tabPage23.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.richTextBox22);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.label60);
+            this.panel5.Controls.Add(this.label59);
+            this.panel5.Controls.Add(this.textBox67);
+            this.panel5.Location = new System.Drawing.Point(2, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(645, 414);
+            this.panel5.TabIndex = 0;
+            // 
+            // richTextBox22
+            // 
+            this.richTextBox22.Location = new System.Drawing.Point(155, 3);
+            this.richTextBox22.Name = "richTextBox22";
+            this.richTextBox22.Size = new System.Drawing.Size(487, 400);
+            this.richTextBox22.TabIndex = 4;
+            this.richTextBox22.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 22);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "solve";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(130, 6);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(19, 13);
+            this.label60.TabIndex = 2;
+            this.label60.Text = "ok";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(5, 6);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(45, 13);
+            this.label59.TabIndex = 1;
+            this.label59.Text = "GF(p^k)";
+            // 
+            // textBox67
+            // 
+            this.textBox67.Location = new System.Drawing.Point(56, 3);
+            this.textBox67.Name = "textBox67";
+            this.textBox67.Size = new System.Drawing.Size(68, 20);
+            this.textBox67.TabIndex = 0;
+            this.textBox67.Text = "256";
+            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.richTextBox5);
@@ -1782,7 +1896,7 @@
             this.tabPage9.Controls.Add(this.label18);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(649, 448);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "GF(2^8)";
@@ -1845,7 +1959,7 @@
             // textBox37
             // 
             this.textBox37.Location = new System.Drawing.Point(475, 56);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox37.Margin = new System.Windows.Forms.Padding(2);
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(159, 20);
             this.textBox37.TabIndex = 32;
@@ -1853,7 +1967,7 @@
             // textBox36
             // 
             this.textBox36.Location = new System.Drawing.Point(426, 56);
-            this.textBox36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox36.Margin = new System.Windows.Forms.Padding(2);
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(28, 20);
             this.textBox36.TabIndex = 30;
@@ -1863,7 +1977,7 @@
             // textBox35
             // 
             this.textBox35.Location = new System.Drawing.Point(247, 56);
-            this.textBox35.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox35.Margin = new System.Windows.Forms.Padding(2);
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(175, 20);
             this.textBox35.TabIndex = 29;
@@ -1873,7 +1987,7 @@
             // textBox34
             // 
             this.textBox34.Location = new System.Drawing.Point(85, 56);
-            this.textBox34.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox34.Margin = new System.Windows.Forms.Padding(2);
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(154, 20);
             this.textBox34.TabIndex = 28;
@@ -1893,7 +2007,7 @@
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(247, 21);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(175, 20);
             this.textBox21.TabIndex = 26;
@@ -1903,7 +2017,7 @@
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(37, 21);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(202, 20);
             this.textBox18.TabIndex = 18;
@@ -1933,7 +2047,7 @@
             // textBox19
             // 
             this.textBox19.Location = new System.Drawing.Point(426, 21);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(2);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(28, 20);
             this.textBox19.TabIndex = 21;
@@ -1962,7 +2076,7 @@
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(475, 22);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(2);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(159, 20);
             this.textBox20.TabIndex = 24;
@@ -1979,12 +2093,148 @@
             // 
             // tabPage24
             // 
+            this.tabPage24.Controls.Add(this.textBox71);
+            this.tabPage24.Controls.Add(this.textBox70);
+            this.tabPage24.Controls.Add(this.label81);
+            this.tabPage24.Controls.Add(this.label86);
+            this.tabPage24.Controls.Add(this.label83);
+            this.tabPage24.Controls.Add(this.label87);
+            this.tabPage24.Controls.Add(this.label82);
+            this.tabPage24.Controls.Add(this.label84);
+            this.tabPage24.Controls.Add(this.label67);
+            this.tabPage24.Controls.Add(this.richTextBox28);
+            this.tabPage24.Controls.Add(this.richTextBox26);
+            this.tabPage24.Controls.Add(this.richTextBox27);
+            this.tabPage24.Controls.Add(this.richTextBox25);
             this.tabPage24.Location = new System.Drawing.Point(4, 22);
             this.tabPage24.Name = "tabPage24";
             this.tabPage24.Size = new System.Drawing.Size(649, 448);
             this.tabPage24.TabIndex = 2;
             this.tabPage24.Text = "MATRIX";
             this.tabPage24.UseVisualStyleBackColor = true;
+            // 
+            // textBox71
+            // 
+            this.textBox71.Location = new System.Drawing.Point(478, 372);
+            this.textBox71.Name = "textBox71";
+            this.textBox71.Size = new System.Drawing.Size(100, 20);
+            this.textBox71.TabIndex = 2;
+            this.textBox71.Text = "256";
+            this.textBox71.TextChanged += new System.EventHandler(this.textBox71_TextChanged_1);
+            // 
+            // textBox70
+            // 
+            this.textBox70.Location = new System.Drawing.Point(478, 347);
+            this.textBox70.Name = "textBox70";
+            this.textBox70.Size = new System.Drawing.Size(46, 20);
+            this.textBox70.TabIndex = 2;
+            this.textBox70.Text = "0";
+            this.textBox70.TextChanged += new System.EventHandler(this.textBox70_TextChanged_1);
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(440, 375);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(37, 13);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "Z_b[x]";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(185, 215);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(13, 13);
+            this.label86.TabIndex = 1;
+            this.label86.Text = "=";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(188, 55);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(13, 13);
+            this.label83.TabIndex = 1;
+            this.label83.Text = "=";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(188, 153);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(16, 13);
+            this.label87.TabIndex = 1;
+            this.label87.Text = "-1";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(185, 6);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(16, 13);
+            this.label82.TabIndex = 1;
+            this.label82.Text = "-1";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(530, 350);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(75, 13);
+            this.label84.TabIndex = 1;
+            this.label84.Text = "19 irreducibles";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(440, 350);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(32, 13);
+            this.label67.TabIndex = 1;
+            this.label67.Text = "p(x)[i]";
+            // 
+            // richTextBox28
+            // 
+            this.richTextBox28.Font = new System.Drawing.Font("Consolas", 9F);
+            this.richTextBox28.Location = new System.Drawing.Point(224, 153);
+            this.richTextBox28.Name = "richTextBox28";
+            this.richTextBox28.Size = new System.Drawing.Size(413, 154);
+            this.richTextBox28.TabIndex = 0;
+            this.richTextBox28.Text = "6 0 6\n0 0 0\n6 0 6";
+            // 
+            // richTextBox26
+            // 
+            this.richTextBox26.Font = new System.Drawing.Font("Consolas", 9F);
+            this.richTextBox26.Location = new System.Drawing.Point(224, 3);
+            this.richTextBox26.Name = "richTextBox26";
+            this.richTextBox26.Size = new System.Drawing.Size(413, 144);
+            this.richTextBox26.TabIndex = 0;
+            this.richTextBox26.Text = resources.GetString("richTextBox26.Text");
+            // 
+            // richTextBox27
+            // 
+            this.richTextBox27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox27.Location = new System.Drawing.Point(4, 153);
+            this.richTextBox27.Name = "richTextBox27";
+            this.richTextBox27.Size = new System.Drawing.Size(175, 127);
+            this.richTextBox27.TabIndex = 0;
+            this.richTextBox27.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            this.richTextBox27.TextChanged += new System.EventHandler(this.richTextBox27_TextChanged);
+            // 
+            // richTextBox25
+            // 
+            this.richTextBox25.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox25.Location = new System.Drawing.Point(4, 3);
+            this.richTextBox25.Name = "richTextBox25";
+            this.richTextBox25.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox25.TabIndex = 0;
+            this.richTextBox25.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            this.richTextBox25.TextChanged += new System.EventHandler(this.richTextBox25_TextChanged);
             // 
             // tabPage5
             // 
@@ -2013,7 +2263,7 @@
             this.tabPage6.Controls.Add(this.textBox8);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(643, 309);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "JessShifter";
@@ -2051,7 +2301,7 @@
             this.tabPage7.Controls.Add(this.textBox10);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(643, 309);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Arkpay";
@@ -2110,7 +2360,7 @@
             this.tabPage17.Controls.Add(this.textBox62);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage17.Size = new System.Drawing.Size(650, 448);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Crack";
@@ -2224,7 +2474,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(1, 26);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(661, 518);
@@ -2266,7 +2516,7 @@
             this.tabPage11.Controls.Add(this.textBox42);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage11.Size = new System.Drawing.Size(647, 463);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Num";
@@ -2401,7 +2651,7 @@
             this.tabPage21.Controls.Add(this.tabControl11);
             this.tabPage21.Location = new System.Drawing.Point(4, 22);
             this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage21.Size = new System.Drawing.Size(651, 444);
             this.tabPage21.TabIndex = 0;
             this.tabPage21.Text = "Text";
@@ -2424,7 +2674,7 @@
             this.tabPage22.Controls.Add(this.label57);
             this.tabPage22.Location = new System.Drawing.Point(4, 22);
             this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage22.Size = new System.Drawing.Size(650, 422);
             this.tabPage22.TabIndex = 0;
             this.tabPage22.Text = "Histogram";
@@ -2489,7 +2739,7 @@
             this.tabPage20.Controls.Add(this.panel1);
             this.tabPage20.Location = new System.Drawing.Point(4, 22);
             this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage20.Size = new System.Drawing.Size(649, 422);
             this.tabPage20.TabIndex = 0;
             this.tabPage20.Text = "nBaseAscii";
@@ -2571,7 +2821,7 @@
             this.tabPage13.Controls.Add(this.textBox83);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage13.Size = new System.Drawing.Size(653, 419);
             this.tabPage13.TabIndex = 0;
             this.tabPage13.Text = "Integer";
@@ -2636,7 +2886,7 @@
             this.tabPage33.Controls.Add(this.panel2);
             this.tabPage33.Location = new System.Drawing.Point(4, 22);
             this.tabPage33.Name = "tabPage33";
-            this.tabPage33.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage33.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage33.Size = new System.Drawing.Size(648, 426);
             this.tabPage33.TabIndex = 0;
             this.tabPage33.Text = "Black and white";
@@ -2656,7 +2906,7 @@
             // 
             this.tabPage34.Location = new System.Drawing.Point(4, 22);
             this.tabPage34.Name = "tabPage34";
-            this.tabPage34.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage34.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage34.Size = new System.Drawing.Size(648, 426);
             this.tabPage34.TabIndex = 1;
             this.tabPage34.Text = "tabPage34";
@@ -2667,7 +2917,7 @@
             this.tabPage35.Controls.Add(this.tabControl16);
             this.tabPage35.Location = new System.Drawing.Point(4, 22);
             this.tabPage35.Name = "tabPage35";
-            this.tabPage35.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage35.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage35.Size = new System.Drawing.Size(651, 444);
             this.tabPage35.TabIndex = 4;
             this.tabPage35.Text = "Num Set";
@@ -2688,7 +2938,7 @@
             this.tabPage36.Controls.Add(this.panel3);
             this.tabPage36.Location = new System.Drawing.Point(4, 22);
             this.tabPage36.Name = "tabPage36";
-            this.tabPage36.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage36.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage36.Size = new System.Drawing.Size(650, 426);
             this.tabPage36.TabIndex = 0;
             this.tabPage36.Text = "Galois Fields";
@@ -2790,50 +3040,122 @@
             this.textBox84.Name = "textBox84";
             this.textBox84.Size = new System.Drawing.Size(270, 20);
             this.textBox84.TabIndex = 4;
+            this.textBox84.Text = "1 2 3 4 5 6";
+            this.textBox84.TextChanged += new System.EventHandler(this.textBox84_TextChanged);
             // 
             // tabPage37
             // 
             this.tabPage37.Controls.Add(this.panel4);
             this.tabPage37.Location = new System.Drawing.Point(4, 22);
             this.tabPage37.Name = "tabPage37";
-            this.tabPage37.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage37.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage37.Size = new System.Drawing.Size(650, 426);
             this.tabPage37.TabIndex = 1;
-            this.tabPage37.Text = "tabPage37";
+            this.tabPage37.Text = "Mat Mul";
             this.tabPage37.UseVisualStyleBackColor = true;
-            // 
-            // FRAME_TIMER
-            // 
-            this.FRAME_TIMER.Interval = 333;
-            this.FRAME_TIMER.Tick += new System.EventHandler(this.FRAME_TIMER_TICK);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel4.Controls.Add(this.label66);
+            this.panel4.Controls.Add(this.label65);
+            this.panel4.Controls.Add(this.label64);
+            this.panel4.Controls.Add(this.label63);
+            this.panel4.Controls.Add(this.label62);
+            this.panel4.Controls.Add(this.label61);
+            this.panel4.Controls.Add(this.textBox69);
+            this.panel4.Controls.Add(this.textBox68);
+            this.panel4.Controls.Add(this.richTextBox23);
             this.panel4.Controls.Add(this.richTextBox21);
             this.panel4.Controls.Add(this.richTextBox20);
             this.panel4.Controls.Add(this.richTextBox19);
-            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Location = new System.Drawing.Point(1, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(647, 376);
             this.panel4.TabIndex = 0;
             // 
-            // richTextBox19
+            // label66
             // 
-            this.richTextBox19.Location = new System.Drawing.Point(5, 3);
-            this.richTextBox19.Name = "richTextBox19";
-            this.richTextBox19.Size = new System.Drawing.Size(155, 146);
-            this.richTextBox19.TabIndex = 0;
-            this.richTextBox19.Text = "1 2 3 4\n5 6 7 8\n9 1 2 3\n4 5 6 7";
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(144, 206);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(53, 13);
+            this.label66.TabIndex = 5;
+            this.label66.Text = "pCount: 0";
             // 
-            // richTextBox20
+            // label65
             // 
-            this.richTextBox20.Location = new System.Drawing.Point(191, 3);
-            this.richTextBox20.Name = "richTextBox20";
-            this.richTextBox20.Size = new System.Drawing.Size(155, 146);
-            this.richTextBox20.TabIndex = 0;
-            this.richTextBox20.Text = "1 0 1 0\n0 2 0 2\n3 0 3 0\n0 4 0 4";
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(144, 184);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(85, 13);
+            this.label65.TabIndex = 4;
+            this.label65.Text = "1 0 0 0 1 1 0 1 1";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(351, 68);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(13, 13);
+            this.label64.TabIndex = 3;
+            this.label64.Text = "=";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(171, 68);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(14, 13);
+            this.label63.TabIndex = 3;
+            this.label63.Text = "X";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label62.Location = new System.Drawing.Point(5, 184);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(32, 13);
+            this.label62.TabIndex = 2;
+            this.label62.Text = "p(x)[i]";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label61.Location = new System.Drawing.Point(5, 158);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(45, 13);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "GF(p^k)";
+            // 
+            // textBox69
+            // 
+            this.textBox69.Location = new System.Drawing.Point(52, 181);
+            this.textBox69.Name = "textBox69";
+            this.textBox69.Size = new System.Drawing.Size(86, 20);
+            this.textBox69.TabIndex = 1;
+            this.textBox69.Text = "0";
+            this.textBox69.TextChanged += new System.EventHandler(this.textBox68_TextChanged_1);
+            // 
+            // textBox68
+            // 
+            this.textBox68.Location = new System.Drawing.Point(52, 155);
+            this.textBox68.Name = "textBox68";
+            this.textBox68.Size = new System.Drawing.Size(86, 20);
+            this.textBox68.TabIndex = 1;
+            this.textBox68.Text = "256";
+            this.textBox68.TextChanged += new System.EventHandler(this.textBox68_TextChanged_1);
+            // 
+            // richTextBox23
+            // 
+            this.richTextBox23.Location = new System.Drawing.Point(371, 158);
+            this.richTextBox23.Name = "richTextBox23";
+            this.richTextBox23.Size = new System.Drawing.Size(155, 146);
+            this.richTextBox23.TabIndex = 0;
+            this.richTextBox23.Text = "";
             // 
             // richTextBox21
             // 
@@ -2843,71 +3165,28 @@
             this.richTextBox21.TabIndex = 0;
             this.richTextBox21.Text = "";
             // 
-            // tabPage23
+            // richTextBox20
             // 
-            this.tabPage23.Controls.Add(this.panel5);
-            this.tabPage23.Location = new System.Drawing.Point(4, 22);
-            this.tabPage23.Name = "tabPage23";
-            this.tabPage23.Size = new System.Drawing.Size(650, 420);
-            this.tabPage23.TabIndex = 3;
-            this.tabPage23.Text = "Primitive";
-            this.tabPage23.UseVisualStyleBackColor = true;
+            this.richTextBox20.Location = new System.Drawing.Point(191, 3);
+            this.richTextBox20.Name = "richTextBox20";
+            this.richTextBox20.Size = new System.Drawing.Size(155, 146);
+            this.richTextBox20.TabIndex = 0;
+            this.richTextBox20.Text = "1 0 1 0\n0 2 0 2\n3 0 3 0\n0 4 0 4";
+            this.richTextBox20.TextChanged += new System.EventHandler(this.richTextBox20_TextChanged);
             // 
-            // panel5
+            // richTextBox19
             // 
-            this.panel5.Controls.Add(this.richTextBox22);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.label60);
-            this.panel5.Controls.Add(this.label59);
-            this.panel5.Controls.Add(this.textBox67);
-            this.panel5.Location = new System.Drawing.Point(2, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(645, 414);
-            this.panel5.TabIndex = 0;
+            this.richTextBox19.Location = new System.Drawing.Point(5, 3);
+            this.richTextBox19.Name = "richTextBox19";
+            this.richTextBox19.Size = new System.Drawing.Size(155, 146);
+            this.richTextBox19.TabIndex = 0;
+            this.richTextBox19.Text = "1 2 3 4\n5 6 7 8\n9 1 2 3\n4 5 6 7";
+            this.richTextBox19.TextChanged += new System.EventHandler(this.richTextBox19_TextChanged);
             // 
-            // textBox67
+            // FRAME_TIMER
             // 
-            this.textBox67.Location = new System.Drawing.Point(56, 3);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(68, 20);
-            this.textBox67.TabIndex = 0;
-            this.textBox67.Text = "256";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(5, 6);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(45, 13);
-            this.label59.TabIndex = 1;
-            this.label59.Text = "GF(p^k)";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(130, 6);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(19, 13);
-            this.label60.TabIndex = 2;
-            this.label60.Text = "ok";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 22);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "solve";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // richTextBox22
-            // 
-            this.richTextBox22.Location = new System.Drawing.Point(155, 3);
-            this.richTextBox22.Name = "richTextBox22";
-            this.richTextBox22.Size = new System.Drawing.Size(487, 400);
-            this.richTextBox22.TabIndex = 4;
-            this.richTextBox22.Text = "";
+            this.FRAME_TIMER.Interval = 333;
+            this.FRAME_TIMER.Tick += new System.EventHandler(this.FRAME_TIMER_TICK);
             // 
             // Form1
             // 
@@ -2946,8 +3225,13 @@
             this.tabPage29.PerformLayout();
             this.tabPage28.ResumeLayout(false);
             this.tabPage28.PerformLayout();
+            this.tabPage23.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            this.tabPage24.ResumeLayout(false);
+            this.tabPage24.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -2989,11 +3273,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.tabPage23.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3255,6 +3537,30 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox textBox67;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox textBox68;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox textBox69;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.RichTextBox richTextBox23;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.RichTextBox richTextBox24;
+        private System.Windows.Forms.RichTextBox richTextBox25;
+        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.TextBox textBox70;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.RichTextBox richTextBox26;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.RichTextBox richTextBox28;
+        private System.Windows.Forms.RichTextBox richTextBox27;
+        private System.Windows.Forms.Label label87;
     }
 }
 
