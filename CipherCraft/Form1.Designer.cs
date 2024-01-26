@@ -236,6 +236,10 @@
             this.textBox64 = new System.Windows.Forms.TextBox();
             this.textBox65 = new System.Windows.Forms.TextBox();
             this.textBox63 = new System.Windows.Forms.TextBox();
+            this.tabPage27 = new System.Windows.Forms.TabPage();
+            this.tabControl12 = new System.Windows.Forms.TabControl();
+            this.tabPage38 = new System.Windows.Forms.TabPage();
+            this.tabPage39 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
@@ -340,6 +344,8 @@
             this.tabControl9.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.tabPage18.SuspendLayout();
+            this.tabPage27.SuspendLayout();
+            this.tabControl12.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -407,16 +413,21 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage16);
+            this.tabControl2.Controls.Add(this.tabPage27);
             this.tabControl2.Location = new System.Drawing.Point(2, 2);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(656, 505);
+            this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage2
@@ -465,7 +476,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 6);
+            this.label1.Location = new System.Drawing.Point(210, 227);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -474,7 +485,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(2, 5);
+            this.numericUpDown1.Location = new System.Drawing.Point(3, 225);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(203, 20);
@@ -496,10 +507,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(266, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 416);
+            this.pictureBox1.Size = new System.Drawing.Size(278, 246);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -2469,8 +2480,54 @@
             this.textBox63.TabIndex = 0;
             this.textBox63.TextChanged += new System.EventHandler(this.textBox63_TextChanged);
             // 
+            // tabPage27
+            // 
+            this.tabPage27.Controls.Add(this.tabControl12);
+            this.tabPage27.Location = new System.Drawing.Point(4, 22);
+            this.tabPage27.Name = "tabPage27";
+            this.tabPage27.Size = new System.Drawing.Size(648, 479);
+            this.tabPage27.TabIndex = 5;
+            this.tabPage27.Text = "EJMA";
+            this.tabPage27.UseVisualStyleBackColor = true;
+            // 
+            // tabControl12
+            // 
+            this.tabControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl12.Controls.Add(this.tabPage38);
+            this.tabControl12.Controls.Add(this.tabPage39);
+            this.tabControl12.Location = new System.Drawing.Point(2, 2);
+            this.tabControl12.Name = "tabControl12";
+            this.tabControl12.SelectedIndex = 0;
+            this.tabControl12.Size = new System.Drawing.Size(646, 466);
+            this.tabControl12.TabIndex = 0;
+            // 
+            // tabPage38
+            // 
+            this.tabPage38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.tabPage38.Location = new System.Drawing.Point(4, 22);
+            this.tabPage38.Name = "tabPage38";
+            this.tabPage38.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage38.Size = new System.Drawing.Size(638, 440);
+            this.tabPage38.TabIndex = 0;
+            this.tabPage38.Text = "EJMA256";
+            // 
+            // tabPage39
+            // 
+            this.tabPage39.Location = new System.Drawing.Point(4, 22);
+            this.tabPage39.Name = "tabPage39";
+            this.tabPage39.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage39.Size = new System.Drawing.Size(638, 440);
+            this.tabPage39.TabIndex = 1;
+            this.tabPage39.Text = "EJMA27";
+            this.tabPage39.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(1, 26);
@@ -3195,9 +3252,10 @@
             this.ClientSize = new System.Drawing.Size(659, 538);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "CipherCraft";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -3244,6 +3302,8 @@
             this.tabPage17.PerformLayout();
             this.tabPage18.ResumeLayout(false);
             this.tabPage18.PerformLayout();
+            this.tabPage27.ResumeLayout(false);
+            this.tabControl12.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
@@ -3561,6 +3621,10 @@
         private System.Windows.Forms.RichTextBox richTextBox28;
         private System.Windows.Forms.RichTextBox richTextBox27;
         private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TabPage tabPage27;
+        private System.Windows.Forms.TabControl tabControl12;
+        private System.Windows.Forms.TabPage tabPage38;
+        private System.Windows.Forms.TabPage tabPage39;
     }
 }
 

@@ -42,10 +42,9 @@ namespace CipherCraft
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabControl2.SelectTab(2);
-            tabControl4.SelectTab(2);
-            invMat();
-            EJMA();
+            tabControl2.SelectTab(5);
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
         void RDA_TAB()
@@ -1037,6 +1036,19 @@ namespace CipherCraft
             byte[] poop = Print.strToByteArray(richTextBox27.Text);
             ejma.R_GFM(ref poop, num(textBox70.Text));
             richTextBox28.Text = ejma.GFM_ToString();
+        }
+
+        private void panel6_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void panel6_DragDrop(object sender, DragEventArgs e)
+        {
+            string path = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
         }
     }
 }

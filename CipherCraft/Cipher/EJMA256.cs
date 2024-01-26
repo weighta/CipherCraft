@@ -17,15 +17,26 @@ namespace CipherCraft
         private const int NUM_IRREDUCIBLEPOLY = 30;
         private int[] IRREDUCIBLEPOLY = new int[30] { 0x11B, 0x11D, 0x12B, 0x12D, 0x139, 0x13F, 0x14D, 0x15F, 0x163, 0x165, 0x169, 0x171, 0x177, 0x17B, 0x187, 0x18B, 0x18D, 0x19F, 0x1A3, 0x1A9, 0x1B1, 0x1BD, 0x1C3, 0x1CF, 0x1D7, 0x1DD, 0x1E7, 0x1F3, 0x1F5, 0x1F9 };
         private int[] PRIMES = new int[256];
+
+        private int[] JMAP = new int[0x780]; //Number of irreducible polynomials * 64 bytes
+        private int[] INV_JMAP = new int[0x780];
+        byte[] J_IMAGE = new byte[64];
+
         private byte[] GFMUL_LOOKUP = new byte[0x1E0000]; //Number of irreducible polynomials * 256^2
         private byte[] GFMULINV_LOOKUP = new byte[0x1E00]; // Number of Irreducible polynomials * 256
         private byte[] GFM_AUG = new byte[64];
         private byte[] GFM_TMP = new byte[64];
         private byte[] GFM_NULL = new byte[64];
+        private int[] GFM_IRRPOLYINDEX = new int[30];
+        private byte[] RHASH = new byte[64];
+        private byte[] KHASH = new byte[64]; //Number of irreducible polynomials * 64 bytes;
+        private byte[] EXP = new byte[0x780];
+        private string PWD;
 
         public EJMA256()
         {
             gfp_n = new GF_P_N();
+            rda = new RDA_cipher();
             BuildPrimes();
             BuildGfMulLookupTable();
             BuildGfMulInvLookupTable();
@@ -81,6 +92,41 @@ namespace CipherCraft
                         }
                     }
                 }
+            }
+        }
+        private void BuildJShiftMaps()
+        {
+            int[] preIndex = new int[64]
+            {
+                00, 01, 02, 03, 04, 05, 06, 07,
+                08, 09, 10, 11, 12, 13, 14, 15,
+                16, 17, 18, 19, 20, 21, 22, 23,
+                24, 25, 26, 27, 28, 29, 30, 31,
+                32, 33, 34, 35, 36, 37, 38, 39,
+                40, 41, 42, 43, 44, 45, 46, 47,
+                48, 49, 50, 51, 52, 53, 54, 55,
+                56, 57, 58, 59, 60, 61, 62, 63
+            };
+            int[] index = new int[64];
+            for (int i = 0; i < NUM_IRREDUCIBLEPOLY; i++)
+            {
+                preIndex.CopyTo(index, 0);
+                for (int j = 0; j < index.Length; j++) //round map
+                {
+                    SWAP(ref index, j, PRIMES[EXP[(i << 6) + j]] & 63);
+                }
+                index.CopyTo(JMAP, i << 6);
+                for (int j = 0; j < index.Length; j++) //round inverse map
+                {
+                    INV_JMAP[(i << 6) + index[j]] = j;
+                }
+            }
+        }
+        private void BuildGFMIrrPolys()
+        {
+            for (int i = 0; i < GFM_IRRPOLYINDEX.Length; i++)
+            {
+                GFM_IRRPOLYINDEX[i] = RHASH[i] % NUM_IRREDUCIBLEPOLY;
             }
         }
         /// <summary>
@@ -738,18 +784,50 @@ namespace CipherCraft
 
         }
 
-        public void JSHIFT(ref byte[] MAT8X8, byte[] KHASH_r)
+        public void JSHIFT(ref byte[] MAT8X8, int ROUND)
         {
-
+            int shift = ROUND << 6;
+            for (int i = 0; i < MAT8X8.Length; i++)
+            {
+                J_IMAGE[i] = MAT8X8[JMAP[i + shift]];
+            }
+            J_IMAGE.CopyTo(MAT8X8, 0);
         }
 
-        void encrypt(ref byte[] buffer, string key)
+        public void INV_JSHIFT(ref byte[] MAT8X8, int ROUND)
         {
-
+            int shift = ROUND << 6;
+            for (int i = 0; i < MAT8X8.Length; i++)
+            {
+                J_IMAGE[i] = MAT8X8[INV_JMAP[i + shift]];
+            }
+            J_IMAGE.CopyTo(MAT8X8, 0);
         }
+
+        public void SWAP(ref int[] MAT8X8, int a, int b)
+        {
+            int tmp = MAT8X8[b];
+            MAT8X8[b] = MAT8X8[a];
+            MAT8X8[a] = tmp;
+        }
+
+        public void Encrypt(ref byte[] buffer, int rounds, string key)
+        {
+            PWD = key;
+
+            KHASH = rda.kHashingAlgorithm(PWD);
+            RHASH = rda.rHashingAlgorithm(KHASH, PWD);
+            rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
+
+            BuildJShiftMaps();
+            BuildGFMIrrPolys();
+        }
+
+
+
         public string GFM_ToString()
         {
-            string FULL_AUG="";
+            string FULL_AUG = "";
             for (int i = 0; i < 8; i++)
             {
                 if (i != 0) FULL_AUG += '\n';
