@@ -54,7 +54,7 @@ namespace CipherCraft
                 int f = 0;
                 while (f < size)
                 {
-                    int c = (s[j] % size);
+                    int c = s[j] % size;
                     if (!Print.contains(p, c, f))
                     {
                         p[f] = (char)c;

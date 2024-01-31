@@ -9,14 +9,16 @@ namespace CipherCraft
 {
     public class EJMA256
     {
-        private JessShifter js;
-        private GF_P_N gfp_n;
-        private Enigma en;
         private RDA_cipher rda;
 
         private const int NUM_IRREDUCIBLEPOLY = 30;
         private int[] IRREDUCIBLEPOLY = new int[30] { 0x11B, 0x11D, 0x12B, 0x12D, 0x139, 0x13F, 0x14D, 0x15F, 0x163, 0x165, 0x169, 0x171, 0x177, 0x17B, 0x187, 0x18B, 0x18D, 0x19F, 0x1A3, 0x1A9, 0x1B1, 0x1BD, 0x1C3, 0x1CF, 0x1D7, 0x1DD, 0x1E7, 0x1F3, 0x1F5, 0x1F9 };
         private int[] PRIMES = new int[256];
+
+        private byte[] ENIGMA_MACHINE = new byte[0x10000000];
+        private byte[] INV_ENIGMA_MACHINE = new byte[0x10000000];
+        private byte[] ROTORS = new byte[0x300];
+
 
         private int[] JMAP = new int[0x780]; //Number of irreducible polynomials * 64 bytes
         private int[] INV_JMAP = new int[0x780];
@@ -29,13 +31,12 @@ namespace CipherCraft
         private byte[] GFM_NULL = new byte[64];
         private int[] GFM_IRRPOLYINDEX = new int[30];
         private byte[] RHASH = new byte[64];
-        private byte[] KHASH = new byte[64]; //Number of irreducible polynomials * 64 bytes;
-        private byte[] EXP = new byte[0x780];
+        private byte[] KHASH = new byte[64]; 
+        private byte[] EXP = new byte[0x780]; //64 bytes * Number of irreducible polynomials
         private string PWD;
 
         public EJMA256()
-        {
-            gfp_n = new GF_P_N();
+        { 
             rda = new RDA_cipher();
             BuildPrimes();
             BuildGfMulLookupTable();
@@ -61,6 +62,69 @@ namespace CipherCraft
                 n += 2;
             }
         }
+
+        private void BuildEnigma()
+        {
+            BuildEnigmaRotors();
+            BuildEnigmaMachine();
+        }
+        private void BuildEnigmaRotors()
+        {
+            int a = NUM_IRREDUCIBLEPOLY; // 30
+            int ii = 0;
+            for (int i = 0; i < 3; i++) //EJMA has 3 rotors totalling (256)^3 = 16,777,216 clocks, only 1,048,576 are needed for 1MB
+            {
+                int f = 0;
+                while (f < 256)
+                {
+                    bool notContains = true;
+                    for (int k = i << 8; k < (i << 8) + f; k++)
+                    {
+                        if (ROTORS[k] == EXP[ii]) notContains = false;
+                    }
+                    if (notContains)
+                    {
+                        ROTORS[(i << 8) + f++] = EXP[ii];
+                    }
+                    ii++;
+                    if (ii >= EXP.Length)
+                    {
+                        a <<= 1; // 30 * 2
+                        EXP = rda.keyExpansion(KHASH, a);
+                    }
+                }
+            }
+        }
+        private void BuildEnigmaMachine()
+        {
+            for (int i = 0; i < 1048576; i++) //1048576 = 1MB
+            {
+                int shift = i << 8;
+                int onesPlace = i & 255;
+                int twosPlace = (i >> 8) & 255;
+                int threesPlace = (i >> 16) & 255;
+
+                for (int j = 0; j < 256; j++) //256 see where every character maps to
+                {
+                    int value = j;
+                    value = ROTORS[(value + onesPlace) & 255];
+                    value = ROTORS[((value + twosPlace) & 255) + 256];
+                    ENIGMA_MACHINE[shift + j] = ROTORS[((value + threesPlace) & 255) + 512];
+                }
+            }
+        }
+        private void BuildEnigmaMachineInverse()
+        {
+            for (int i = 0; i < 1048576; i++)
+            {
+                int shift = i << 8; // * 256
+                for (int j = 0; j < 256; j++)
+                {
+                    INV_ENIGMA_MACHINE[shift + ENIGMA_MACHINE[shift + j]] = (byte)j;
+                }
+            }
+        }
+
         private void BuildGfMulLookupTable()
         {
             for (int i = 0; i < NUM_IRREDUCIBLEPOLY; i++)
@@ -168,7 +232,52 @@ namespace CipherCraft
         }
 
         /// <summary>
-        /// Calculates the inverse matrix 8x8 over GF(2^8)
+        /// Polyalphabetic substitution cipher from WWII wih security fixes.
+        /// </summary>
+        /// <param name="blockOffs"></param>
+        public void ENIGMA(ref byte[] MAT8X8, int blockOffs)
+        {
+            int enigmaIndex = (blockOffs << 8) & 0xFFFFFFF; //64 * 256 mod enigma size
+            for (int i = 0; i < 64; i++)
+            {
+                MAT8X8[i] = ENIGMA_MACHINE[MAT8X8[i] + (i << 8) + enigmaIndex];
+            }
+        }
+        public void INV_ENIGMA(ref byte[] MAT8X8, int blockOffs)
+        {
+            int enigmaIndex = (blockOffs << 8) & 0xFFFFFFF; //64 * 256 mod enigma size
+            for (int i = 0; i < 64; i++)
+            {
+                MAT8X8[i] = INV_ENIGMA_MACHINE[MAT8X8[i] + (i << 8) + enigmaIndex];
+            }
+        }
+
+        /// <summary>
+        /// Remaps byte positions over entire 8x8 matrix
+        /// </summary>
+        /// <param name="MAT8X8"></param>
+        /// <param name="ROUND"></param>
+        public void JSHIFT(ref byte[] MAT8X8, int ROUND)
+        {
+            int shift = ROUND << 6;
+            for (int i = 0; i < MAT8X8.Length; i++)
+            {
+                J_IMAGE[i] = MAT8X8[JMAP[i + shift]];
+            }
+            J_IMAGE.CopyTo(MAT8X8, 0);
+        }
+        public void INV_JSHIFT(ref byte[] MAT8X8, int ROUND)
+        {
+            int shift = ROUND << 6;
+            for (int i = 0; i < MAT8X8.Length; i++)
+            {
+                J_IMAGE[i] = MAT8X8[INV_JMAP[i + shift]];
+            }
+            J_IMAGE.CopyTo(MAT8X8, 0);
+        }
+
+        /// <summary>
+        /// Calculates the inverse matrix 8x8 over GF(2^8) with p(x)
         /// </summary>
         /// <param name="MAT8X8">byte[64] represented as 8x8 matrix</param>
         /// <param name="IRR_INDEX">RANGE FROM 0-30 Inclusive</param>
@@ -784,46 +893,370 @@ namespace CipherCraft
 
         }
 
-        public void JSHIFT(ref byte[] MAT8X8, int ROUND)
+        /// <summary>
+        /// Add the round key
+        /// </summary>
+        /// <param name="MAT8X8"></param>
+        /// <param name="ROUND"></param>
+        public void ADD_ROUND_KEY(ref byte[] MAT8X8, int ROUND)
         {
             int shift = ROUND << 6;
-            for (int i = 0; i < MAT8X8.Length; i++)
-            {
-                J_IMAGE[i] = MAT8X8[JMAP[i + shift]];
-            }
-            J_IMAGE.CopyTo(MAT8X8, 0);
+            MAT8X8[0] ^= EXP[shift];
+            MAT8X8[1] ^= EXP[shift + 1];
+            MAT8X8[2] ^= EXP[shift + 2];
+            MAT8X8[3] ^= EXP[shift + 3];
+            MAT8X8[4] ^= EXP[shift + 4];
+            MAT8X8[5] ^= EXP[shift + 5];
+            MAT8X8[6] ^= EXP[shift + 6];
+            MAT8X8[7] ^= EXP[shift + 7];
+            MAT8X8[8] ^= EXP[shift + 8];
+            MAT8X8[9] ^= EXP[shift + 9];
+            MAT8X8[10] ^= EXP[shift + 10];
+            MAT8X8[11] ^= EXP[shift + 11];
+            MAT8X8[12] ^= EXP[shift + 12];
+            MAT8X8[13] ^= EXP[shift + 13];
+            MAT8X8[14] ^= EXP[shift + 14];
+            MAT8X8[15] ^= EXP[shift + 15];
+            MAT8X8[16] ^= EXP[shift + 16];
+            MAT8X8[17] ^= EXP[shift + 17];
+            MAT8X8[18] ^= EXP[shift + 18];
+            MAT8X8[19] ^= EXP[shift + 19];
+            MAT8X8[20] ^= EXP[shift + 20];
+            MAT8X8[21] ^= EXP[shift + 21];
+            MAT8X8[22] ^= EXP[shift + 22];
+            MAT8X8[23] ^= EXP[shift + 23];
+            MAT8X8[24] ^= EXP[shift + 24];
+            MAT8X8[25] ^= EXP[shift + 25];
+            MAT8X8[26] ^= EXP[shift + 26];
+            MAT8X8[27] ^= EXP[shift + 27];
+            MAT8X8[28] ^= EXP[shift + 28];
+            MAT8X8[29] ^= EXP[shift + 29];
+            MAT8X8[30] ^= EXP[shift + 30];
+            MAT8X8[31] ^= EXP[shift + 31];
+            MAT8X8[32] ^= EXP[shift + 32];
+            MAT8X8[33] ^= EXP[shift + 33];
+            MAT8X8[34] ^= EXP[shift + 34];
+            MAT8X8[35] ^= EXP[shift + 35];
+            MAT8X8[36] ^= EXP[shift + 36];
+            MAT8X8[37] ^= EXP[shift + 37];
+            MAT8X8[38] ^= EXP[shift + 38];
+            MAT8X8[39] ^= EXP[shift + 39];
+            MAT8X8[40] ^= EXP[shift + 40];
+            MAT8X8[41] ^= EXP[shift + 41];
+            MAT8X8[42] ^= EXP[shift + 42];
+            MAT8X8[43] ^= EXP[shift + 43];
+            MAT8X8[44] ^= EXP[shift + 44];
+            MAT8X8[45] ^= EXP[shift + 45];
+            MAT8X8[46] ^= EXP[shift + 46];
+            MAT8X8[47] ^= EXP[shift + 47];
+            MAT8X8[48] ^= EXP[shift + 48];
+            MAT8X8[49] ^= EXP[shift + 49];
+            MAT8X8[50] ^= EXP[shift + 50];
+            MAT8X8[51] ^= EXP[shift + 51];
+            MAT8X8[52] ^= EXP[shift + 52];
+            MAT8X8[53] ^= EXP[shift + 53];
+            MAT8X8[54] ^= EXP[shift + 54];
+            MAT8X8[55] ^= EXP[shift + 55];
+            MAT8X8[56] ^= EXP[shift + 56];
+            MAT8X8[57] ^= EXP[shift + 57];
+            MAT8X8[58] ^= EXP[shift + 58];
+            MAT8X8[59] ^= EXP[shift + 59];
+            MAT8X8[60] ^= EXP[shift + 60];
+            MAT8X8[61] ^= EXP[shift + 61];
+            MAT8X8[62] ^= EXP[shift + 62];
+            MAT8X8[63] ^= EXP[shift + 63];
         }
 
-        public void INV_JSHIFT(ref byte[] MAT8X8, int ROUND)
+        /// <summary>
+        /// Add RHASH key at beginning of encryption
+        /// </summary>
+        /// <param name="MAT8X8"></param>
+        public void ADD_RHASH_KEY(ref byte[] MAT8X8)
         {
-            int shift = ROUND << 6;
-            for (int i = 0; i < MAT8X8.Length; i++)
-            {
-                J_IMAGE[i] = MAT8X8[INV_JMAP[i + shift]];
-            }
-            J_IMAGE.CopyTo(MAT8X8, 0);
+            MAT8X8[0] ^= RHASH[0];
+            MAT8X8[1] ^= RHASH[1];
+            MAT8X8[2] ^= RHASH[2];
+            MAT8X8[3] ^= RHASH[3];
+            MAT8X8[4] ^= RHASH[4];
+            MAT8X8[5] ^= RHASH[5];
+            MAT8X8[6] ^= RHASH[6];
+            MAT8X8[7] ^= RHASH[7];
+            MAT8X8[8] ^= RHASH[8];
+            MAT8X8[9] ^= RHASH[9];
+            MAT8X8[10] ^= RHASH[10];
+            MAT8X8[11] ^= RHASH[11];
+            MAT8X8[12] ^= RHASH[12];
+            MAT8X8[13] ^= RHASH[13];
+            MAT8X8[14] ^= RHASH[14];
+            MAT8X8[15] ^= RHASH[15];
+            MAT8X8[16] ^= RHASH[16];
+            MAT8X8[17] ^= RHASH[17];
+            MAT8X8[18] ^= RHASH[18];
+            MAT8X8[19] ^= RHASH[19];
+            MAT8X8[20] ^= RHASH[20];
+            MAT8X8[21] ^= RHASH[21];
+            MAT8X8[22] ^= RHASH[22];
+            MAT8X8[23] ^= RHASH[23];
+            MAT8X8[24] ^= RHASH[24];
+            MAT8X8[25] ^= RHASH[25];
+            MAT8X8[26] ^= RHASH[26];
+            MAT8X8[27] ^= RHASH[27];
+            MAT8X8[28] ^= RHASH[28];
+            MAT8X8[29] ^= RHASH[29];
+            MAT8X8[30] ^= RHASH[30];
+            MAT8X8[31] ^= RHASH[31];
+            MAT8X8[32] ^= RHASH[32];
+            MAT8X8[33] ^= RHASH[33];
+            MAT8X8[34] ^= RHASH[34];
+            MAT8X8[35] ^= RHASH[35];
+            MAT8X8[36] ^= RHASH[36];
+            MAT8X8[37] ^= RHASH[37];
+            MAT8X8[38] ^= RHASH[38];
+            MAT8X8[39] ^= RHASH[39];
+            MAT8X8[40] ^= RHASH[40];
+            MAT8X8[41] ^= RHASH[41];
+            MAT8X8[42] ^= RHASH[42];
+            MAT8X8[43] ^= RHASH[43];
+            MAT8X8[44] ^= RHASH[44];
+            MAT8X8[45] ^= RHASH[45];
+            MAT8X8[46] ^= RHASH[46];
+            MAT8X8[47] ^= RHASH[47];
+            MAT8X8[48] ^= RHASH[48];
+            MAT8X8[49] ^= RHASH[49];
+            MAT8X8[50] ^= RHASH[50];
+            MAT8X8[51] ^= RHASH[51];
+            MAT8X8[52] ^= RHASH[52];
+            MAT8X8[53] ^= RHASH[53];
+            MAT8X8[54] ^= RHASH[54];
+            MAT8X8[55] ^= RHASH[55];
+            MAT8X8[56] ^= RHASH[56];
+            MAT8X8[57] ^= RHASH[57];
+            MAT8X8[58] ^= RHASH[58];
+            MAT8X8[59] ^= RHASH[59];
+            MAT8X8[60] ^= RHASH[60];
+            MAT8X8[61] ^= RHASH[61];
+            MAT8X8[62] ^= RHASH[62];
+            MAT8X8[63] ^= RHASH[63];
         }
 
+        public byte[] Encrypt(byte[] buffer, int rounds, string key)
+        {
+            buffer = Symmetricate(buffer);
+
+            PWD = key;
+            KHASH = rda.kHashingAlgorithm(PWD);
+            RHASH = rda.rHashingAlgorithm(KHASH, PWD);
+            rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
+
+            BuildEnigma();
+            BuildJShiftMaps();
+            BuildGFMIrrPolys();
+
+            byte[] BLOCK = new byte[64];
+            for (int i = 0; i < buffer.Length; i += 64)
+            {
+                getBlock(ref buffer, ref BLOCK, i);
+                for (int j = 0; j < rounds; j++)
+                {
+                    //if (j == 0) ADD_RHASH_KEY(ref BLOCK);
+                    ENIGMA(ref BLOCK, i);
+                    //JSHIFT(ref BLOCK, j);
+                    //if (j < rounds - 1) R_GFM(ref BLOCK, j); //No diffusion on last round
+                    //ADD_ROUND_KEY(ref BLOCK, j);
+                }
+                setBlock(ref buffer, ref BLOCK, i);
+            }
+            return buffer;
+        }
+
+        public byte[] Decrypt(byte[] buffer, int rounds, string key)
+        {
+            if ((buffer.Length & 63) == 0)
+            {
+                PWD = key;
+                KHASH = rda.kHashingAlgorithm(PWD);
+                RHASH = rda.rHashingAlgorithm(KHASH, PWD);
+                rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
+
+                BuildEnigma();
+                BuildEnigmaMachineInverse();
+                BuildJShiftMaps();
+                BuildGFMIrrPolys();
+
+                byte[] BLOCK = new byte[64];
+                for (int i = 0; i < buffer.Length; i += 64)
+                {
+                    getBlock(ref buffer, ref BLOCK, i);
+                    for (int j = rounds - 1; j >= 0; j--)
+                    {
+                        //ADD_ROUND_KEY(ref BLOCK, j);
+                        //if (j < rounds - 1) R_GFM(ref BLOCK, j);
+                        //INV_JSHIFT(ref BLOCK, j);
+                        INV_ENIGMA(ref BLOCK, i);
+                        //if (j == 0) ADD_RHASH_KEY(ref BLOCK);
+                    }
+                    setBlock(ref buffer, ref BLOCK, i);
+                }
+            }
+            else throw new Exception("Buffer is not 256 symmetric");
+            return buffer;
+        }
+
+        public void getBlock(ref byte[] buffer, ref byte[] BLOCK, int i)
+        {
+            BLOCK[0] = buffer[i];
+            BLOCK[1] = buffer[i + 1];
+            BLOCK[2] = buffer[i + 2];
+            BLOCK[3] = buffer[i + 3];
+            BLOCK[4] = buffer[i + 4];
+            BLOCK[5] = buffer[i + 5];
+            BLOCK[6] = buffer[i + 6];
+            BLOCK[7] = buffer[i + 7];
+            BLOCK[8] = buffer[i + 8];
+            BLOCK[9] = buffer[i + 9];
+            BLOCK[10] = buffer[i + 10];
+            BLOCK[11] = buffer[i + 11];
+            BLOCK[12] = buffer[i + 12];
+            BLOCK[13] = buffer[i + 13];
+            BLOCK[14] = buffer[i + 14];
+            BLOCK[15] = buffer[i + 15];
+            BLOCK[16] = buffer[i + 16];
+            BLOCK[17] = buffer[i + 17];
+            BLOCK[18] = buffer[i + 18];
+            BLOCK[19] = buffer[i + 19];
+            BLOCK[20] = buffer[i + 20];
+            BLOCK[21] = buffer[i + 21];
+            BLOCK[22] = buffer[i + 22];
+            BLOCK[23] = buffer[i + 23];
+            BLOCK[24] = buffer[i + 24];
+            BLOCK[25] = buffer[i + 25];
+            BLOCK[26] = buffer[i + 26];
+            BLOCK[27] = buffer[i + 27];
+            BLOCK[28] = buffer[i + 28];
+            BLOCK[29] = buffer[i + 29];
+            BLOCK[30] = buffer[i + 30];
+            BLOCK[31] = buffer[i + 31];
+            BLOCK[32] = buffer[i + 32];
+            BLOCK[33] = buffer[i + 33];
+            BLOCK[34] = buffer[i + 34];
+            BLOCK[35] = buffer[i + 35];
+            BLOCK[36] = buffer[i + 36];
+            BLOCK[37] = buffer[i + 37];
+            BLOCK[38] = buffer[i + 38];
+            BLOCK[39] = buffer[i + 39];
+            BLOCK[40] = buffer[i + 40];
+            BLOCK[41] = buffer[i + 41];
+            BLOCK[42] = buffer[i + 42];
+            BLOCK[43] = buffer[i + 43];
+            BLOCK[44] = buffer[i + 44];
+            BLOCK[45] = buffer[i + 45];
+            BLOCK[46] = buffer[i + 46];
+            BLOCK[47] = buffer[i + 47];
+            BLOCK[48] = buffer[i + 48];
+            BLOCK[49] = buffer[i + 49];
+            BLOCK[50] = buffer[i + 50];
+            BLOCK[51] = buffer[i + 51];
+            BLOCK[52] = buffer[i + 52];
+            BLOCK[53] = buffer[i + 53];
+            BLOCK[54] = buffer[i + 54];
+            BLOCK[55] = buffer[i + 55];
+            BLOCK[56] = buffer[i + 56];
+            BLOCK[57] = buffer[i + 57];
+            BLOCK[58] = buffer[i + 58];
+            BLOCK[59] = buffer[i + 59];
+            BLOCK[60] = buffer[i + 60];
+            BLOCK[61] = buffer[i + 61];
+            BLOCK[62] = buffer[i + 62];
+            BLOCK[63] = buffer[i + 63];
+        }
+        public void setBlock(ref byte[] buffer, ref byte[] BLOCK, int i)
+        {
+            buffer[i] = BLOCK[0];
+            buffer[i + 1] = BLOCK[1];
+            buffer[i + 2] = BLOCK[2];
+            buffer[i + 3] = BLOCK[3];
+            buffer[i + 4] = BLOCK[4];
+            buffer[i + 5] = BLOCK[5];
+            buffer[i + 6] = BLOCK[6];
+            buffer[i + 7] = BLOCK[7];
+            buffer[i + 8] = BLOCK[8];
+            buffer[i + 9] = BLOCK[9];
+            buffer[i + 10] = BLOCK[10];
+            buffer[i + 11] = BLOCK[11];
+            buffer[i + 12] = BLOCK[12];
+            buffer[i + 13] = BLOCK[13];
+            buffer[i + 14] = BLOCK[14];
+            buffer[i + 15] = BLOCK[15];
+            buffer[i + 16] = BLOCK[16];
+            buffer[i + 17] = BLOCK[17];
+            buffer[i + 18] = BLOCK[18];
+            buffer[i + 19] = BLOCK[19];
+            buffer[i + 20] = BLOCK[20];
+            buffer[i + 21] = BLOCK[21];
+            buffer[i + 22] = BLOCK[22];
+            buffer[i + 23] = BLOCK[23];
+            buffer[i + 24] = BLOCK[24];
+            buffer[i + 25] = BLOCK[25];
+            buffer[i + 26] = BLOCK[26];
+            buffer[i + 27] = BLOCK[27];
+            buffer[i + 28] = BLOCK[28];
+            buffer[i + 29] = BLOCK[29];
+            buffer[i + 30] = BLOCK[30];
+            buffer[i + 31] = BLOCK[31];
+            buffer[i + 32] = BLOCK[32];
+            buffer[i + 33] = BLOCK[33];
+            buffer[i + 34] = BLOCK[34];
+            buffer[i + 35] = BLOCK[35];
+            buffer[i + 36] = BLOCK[36];
+            buffer[i + 37] = BLOCK[37];
+            buffer[i + 38] = BLOCK[38];
+            buffer[i + 39] = BLOCK[39];
+            buffer[i + 40] = BLOCK[40];
+            buffer[i + 41] = BLOCK[41];
+            buffer[i + 42] = BLOCK[42];
+            buffer[i + 43] = BLOCK[43];
+            buffer[i + 44] = BLOCK[44];
+            buffer[i + 45] = BLOCK[45];
+            buffer[i + 46] = BLOCK[46];
+            buffer[i + 47] = BLOCK[47];
+            buffer[i + 48] = BLOCK[48];
+            buffer[i + 49] = BLOCK[49];
+            buffer[i + 50] = BLOCK[50];
+            buffer[i + 51] = BLOCK[51];
+            buffer[i + 52] = BLOCK[52];
+            buffer[i + 53] = BLOCK[53];
+            buffer[i + 54] = BLOCK[54];
+            buffer[i + 55] = BLOCK[55];
+            buffer[i + 56] = BLOCK[56];
+            buffer[i + 57] = BLOCK[57];
+            buffer[i + 58] = BLOCK[58];
+            buffer[i + 59] = BLOCK[59];
+            buffer[i + 60] = BLOCK[60];
+            buffer[i + 61] = BLOCK[61];
+            buffer[i + 62] = BLOCK[62];
+            buffer[i + 63] = BLOCK[63];
+        }
+
+        public byte[] Symmetricate(byte[] a)
+        {
+            if ((a.Length & 255) == 0)
+            {
+                return a;
+            }
+            else
+            {
+                int rem = (64 - (a.Length & 63)) & 63;
+                byte[] ret = new byte[a.Length + rem];
+                a.CopyTo(ret, 0);
+                return ret;
+            }
+        }
         public void SWAP(ref int[] MAT8X8, int a, int b)
         {
             int tmp = MAT8X8[b];
             MAT8X8[b] = MAT8X8[a];
             MAT8X8[a] = tmp;
         }
-
-        public void Encrypt(ref byte[] buffer, int rounds, string key)
-        {
-            PWD = key;
-
-            KHASH = rda.kHashingAlgorithm(PWD);
-            RHASH = rda.rHashingAlgorithm(KHASH, PWD);
-            rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
-
-            BuildJShiftMaps();
-            BuildGFMIrrPolys();
-        }
-
-
 
         public string GFM_ToString()
         {

@@ -61,8 +61,10 @@ namespace CipherCraft
             else
             {
                 byte[] buffer = new byte[64];
+                buffer[0] = 47;
                 log("Encrypt " + numFiles + " files");
-                ejma.Encrypt(ref buffer, 1, "hi");
+                buffer = ejma.Encrypt(buffer, 1, "hi");
+                buffer = ejma.Decrypt(buffer, 1, "hi");
             }
         }
 
