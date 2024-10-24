@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CipherCraft
 {
     public class EJMA256
     {
-        private RDA_cipher rda;
+        public RDA_cipher rda;
 
         private const int NUM_IRREDUCIBLEPOLY = 30;
         private int[] IRREDUCIBLEPOLY = new int[30] { 0x11B, 0x11D, 0x12B, 0x12D, 0x139, 0x13F, 0x14D, 0x15F, 0x163, 0x165, 0x169, 0x171, 0x177, 0x17B, 0x187, 0x18B, 0x18D, 0x19F, 0x1A3, 0x1A9, 0x1B1, 0x1BD, 0x1C3, 0x1CF, 0x1D7, 0x1DD, 0x1E7, 0x1F3, 0x1F5, 0x1F9 };
         private int[] PRIMES = new int[256];
 
-        private byte[] ENIGMA_MACHINE = new byte[0x10000000];
+        private byte[] ENIGMA_MACHINE = new byte[0x10000000]; //1MB * 256
         private byte[] INV_ENIGMA_MACHINE = new byte[0x10000000];
         private byte[] ROTORS = new byte[0x300];
-
 
         private int[] JMAP = new int[0x780]; //Number of irreducible polynomials * 64 bytes
         private int[] INV_JMAP = new int[0x780];
@@ -32,8 +32,9 @@ namespace CipherCraft
         private int[] GFM_IRRPOLYINDEX = new int[30];
         private byte[] RHASH = new byte[64];
         private byte[] KHASH = new byte[64]; 
-        private byte[] EXP = new byte[0x780]; //64 bytes * Number of irreducible polynomials
+        private byte[] EXP; //64 bytes * Number of irreducible polynomials
         private string PWD;
+        private int ROUNDS;
 
         public EJMA256()
         { 
@@ -84,7 +85,13 @@ namespace CipherCraft
                     }
                     if (notContains)
                     {
-                        ROTORS[(i << 8) + f++] = EXP[ii];
+                        byte value = EXP[ii];
+
+                        ROTORS[(i << 8) + f++] = value;
+                        if ((f & 255) == 0)
+                        {
+                            value = (byte)0x0;
+                        }
                     }
                     ii++;
                     if (ii >= EXP.Length)
@@ -97,7 +104,7 @@ namespace CipherCraft
         }
         private void BuildEnigmaMachine()
         {
-            for (int i = 0; i < 1048576; i++) //1048576 = 1MB
+            for (int i = 0; i < 0x100000; i++) //0x100000 = 1MB
             {
                 int shift = i << 8;
                 int onesPlace = i & 255;
@@ -108,8 +115,8 @@ namespace CipherCraft
                 {
                     int value = j;
                     value = ROTORS[(value + onesPlace) & 255];
-                    value = ROTORS[((value + twosPlace) & 255) + 256];
-                    ENIGMA_MACHINE[shift + j] = ROTORS[((value + threesPlace) & 255) + 512];
+                    value = ROTORS[256 + ((value + twosPlace) & 255)];
+                    ENIGMA_MACHINE[shift + j] = ROTORS[512 + ((value + threesPlace) & 255)];
                 }
             }
         }
@@ -1041,31 +1048,47 @@ namespace CipherCraft
 
         public byte[] Encrypt(byte[] buffer, int rounds, string key)
         {
-            buffer = Symmetricate(buffer);
-
+            ROUNDS = rounds;
             PWD = key;
             KHASH = rda.kHashingAlgorithm(PWD);
             RHASH = rda.rHashingAlgorithm(KHASH, PWD);
-            rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
+            EXP = rda.keyExpansion(KHASH, 30);
 
             BuildEnigma();
             BuildJShiftMaps();
             BuildGFMIrrPolys();
 
+            return Encrypt(buffer);
+        }
+
+        public byte[] Encrypt(byte[] buffer)
+        {
+            string stages = "";
+            buffer = Symmetricate(buffer);
             byte[] BLOCK = new byte[64];
             for (int i = 0; i < buffer.Length; i += 64)
             {
                 getBlock(ref buffer, ref BLOCK, i);
-                for (int j = 0; j < rounds; j++)
+                for (int j = 0; j < ROUNDS; j++)
                 {
-                    //if (j == 0) ADD_RHASH_KEY(ref BLOCK);
-                    ENIGMA(ref BLOCK, i);
-                    //JSHIFT(ref BLOCK, j);
-                    //if (j < rounds - 1) R_GFM(ref BLOCK, j); //No diffusion on last round
-                    //ADD_ROUND_KEY(ref BLOCK, j);
+                    if (j == 0)
+                    {
+                        ADD_RHASH_KEY(ref BLOCK); //salt hash
+                    }
+                    ENIGMA(ref BLOCK, i); //poly sub
+                    JSHIFT(ref BLOCK, j); //byte remapping
+                    stages += "stage " + j + ":\nBEFORE\n" + Print.byteArrayToStringMAT(BLOCK, 8) + "\n";
+                    R_GFM(ref BLOCK, j);
+                    stages += "AFTER\n" + Print.byteArrayToStringMAT(BLOCK, 8) + "\n";
+                    if (j < ROUNDS - 1)
+                    {
+                         //8x8 linear diffusion
+                    }//No diffusion on last round
+                    ADD_ROUND_KEY(ref BLOCK, j); //round hash
                 }
                 setBlock(ref buffer, ref BLOCK, i);
             }
+            System.Windows.Forms.Clipboard.SetText(stages);
             return buffer;
         }
 
@@ -1073,33 +1096,48 @@ namespace CipherCraft
         {
             if ((buffer.Length & 63) == 0)
             {
+                ROUNDS = rounds;
                 PWD = key;
                 KHASH = rda.kHashingAlgorithm(PWD);
                 RHASH = rda.rHashingAlgorithm(KHASH, PWD);
-                rda.keyExpansion(KHASH, 30).CopyTo(EXP, 0);
+                EXP = rda.keyExpansion(KHASH, 30);
 
                 BuildEnigma();
                 BuildEnigmaMachineInverse();
                 BuildJShiftMaps();
                 BuildGFMIrrPolys();
-
-                byte[] BLOCK = new byte[64];
-                for (int i = 0; i < buffer.Length; i += 64)
-                {
-                    getBlock(ref buffer, ref BLOCK, i);
-                    for (int j = rounds - 1; j >= 0; j--)
-                    {
-                        //ADD_ROUND_KEY(ref BLOCK, j);
-                        //if (j < rounds - 1) R_GFM(ref BLOCK, j);
-                        //INV_JSHIFT(ref BLOCK, j);
-                        INV_ENIGMA(ref BLOCK, i);
-                        //if (j == 0) ADD_RHASH_KEY(ref BLOCK);
-                    }
-                    setBlock(ref buffer, ref BLOCK, i);
-                }
+                return Decrypt(buffer);
             }
             else throw new Exception("Buffer is not 256 symmetric");
-            return buffer;
+        }
+        public byte[] Decrypt(byte[] buffer)
+        {
+            string stages = "";
+            byte[] BLOCK = new byte[64];
+            for (int i = 0; i < buffer.Length; i += 64)
+            {
+                getBlock(ref buffer, ref BLOCK, i);
+                for (int j = ROUNDS - 1; j >= 0; j--)
+                {
+                    ADD_ROUND_KEY(ref BLOCK, j);
+                    if (j < ROUNDS - 1)
+                    {
+                        
+                    }
+                    stages += "stage " + (j + 1) + ":\nBEFORE\n" + Print.byteArrayToStringMAT(BLOCK, 8) + "\n";
+                    R_GFM(ref BLOCK, j);
+                    stages += "AFTER\n" + Print.byteArrayToStringMAT(BLOCK, 8) + "\n";
+                    INV_JSHIFT(ref BLOCK, j);
+                    INV_ENIGMA(ref BLOCK, i);
+                    if (j == 0)
+                    {
+                        ADD_RHASH_KEY(ref BLOCK);
+                    }
+                }
+                setBlock(ref buffer, ref BLOCK, i);
+            }
+            System.Windows.Forms.Clipboard.SetText(stages);
+            return Desymmetricate(buffer);
         }
 
         public void getBlock(ref byte[] buffer, ref byte[] BLOCK, int i)
@@ -1237,7 +1275,7 @@ namespace CipherCraft
             buffer[i + 63] = BLOCK[63];
         }
 
-        public byte[] Symmetricate(byte[] a)
+        public byte[] Symmetricate_Old(byte[] a)
         {
             if ((a.Length & 255) == 0)
             {
@@ -1250,6 +1288,31 @@ namespace CipherCraft
                 a.CopyTo(ret, 0);
                 return ret;
             }
+        }
+
+        int rem(int a)
+        {
+            return (64 - (a & 63)) & 63;
+        }
+        public byte[] Symmetricate(byte[] word)
+        {
+            int remainder = rem(word.Length);
+            byte[] asymmetric = new byte[word.Length + 1];
+            word.CopyTo(asymmetric, 1);
+            asymmetric[0] = (byte)(rem(asymmetric.Length));
+            byte[] symmetric = new byte[asymmetric.Length + rem(asymmetric.Length)];
+            asymmetric.CopyTo(symmetric, 0);
+            return symmetric;
+        }
+        public byte[] Desymmetricate(byte[] word)
+        {
+            int remainder = word[0];
+            byte[] asymmetric = new byte[word.Length - 1 - remainder];
+            for (int i = 1; i < asymmetric.Length + 1; i++) //fixed
+            {
+                asymmetric[i - 1] = word[i];
+            }
+            return asymmetric;
         }
         public void SWAP(ref int[] MAT8X8, int a, int b)
         {
@@ -1275,6 +1338,27 @@ namespace CipherCraft
                     {
                         FULL_AUG += GFM_TMP[(i << 3) + j].ToString("X2");
                     }
+                }
+            }
+            return FULL_AUG;
+        }
+        public string GFM_ToStringTrunc()
+        {
+            string FULL_AUG = "";
+            for (int i = 0; i < 8; i++)
+            {
+                if (i != 0) FULL_AUG += '\n';
+                for (int j = 8; j < 16; j++)
+                {
+                    if (j >= 8)
+                    {
+                        FULL_AUG += GFM_AUG[(i << 3) + (j - 8)].ToString("X2");
+                    }
+                    else
+                    {
+                        FULL_AUG += GFM_TMP[(i << 3) + j].ToString("X2");
+                    }
+                    if (j != 15) FULL_AUG += ' ';
                 }
             }
             return FULL_AUG;

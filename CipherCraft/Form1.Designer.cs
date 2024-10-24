@@ -199,19 +199,44 @@
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage24 = new System.Windows.Forms.TabPage();
-            this.textBox71 = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
-            this.label81 = new System.Windows.Forms.Label();
+            this.tabControl17 = new System.Windows.Forms.TabControl();
+            this.tabPage40 = new System.Windows.Forms.TabPage();
+            this.richTextBox25 = new System.Windows.Forms.RichTextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.richTextBox27 = new System.Windows.Forms.RichTextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.richTextBox26 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox28 = new System.Windows.Forms.RichTextBox();
             this.label86 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
+            this.tabPage41 = new System.Windows.Forms.TabPage();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.richTextBox32 = new System.Windows.Forms.RichTextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.richTextBox34 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox31 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox33 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox30 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox29 = new System.Windows.Forms.RichTextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.textBox71 = new System.Windows.Forms.TextBox();
             this.label84 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
-            this.richTextBox28 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox26 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox27 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox25 = new System.Windows.Forms.RichTextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.tabPage27 = new System.Windows.Forms.TabPage();
+            this.tabControl12 = new System.Windows.Forms.TabControl();
+            this.tabPage38 = new System.Windows.Forms.TabPage();
+            this.tabPage39 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -222,28 +247,38 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.tabControl9 = new System.Windows.Forms.TabControl();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabControl6 = new System.Windows.Forms.TabControl();
+            this.tabPage42 = new System.Windows.Forms.TabPage();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.textBox64 = new System.Windows.Forms.TextBox();
             this.textBox65 = new System.Windows.Forms.TextBox();
             this.textBox63 = new System.Windows.Forms.TextBox();
-            this.tabPage27 = new System.Windows.Forms.TabPage();
-            this.tabControl12 = new System.Windows.Forms.TabControl();
-            this.tabPage38 = new System.Windows.Forms.TabPage();
-            this.tabPage39 = new System.Windows.Forms.TabPage();
+            this.tabPage43 = new System.Windows.Forms.TabPage();
+            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBox62 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label80 = new System.Windows.Forms.Label();
+            this.textBox86 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox18 = new System.Windows.Forms.RichTextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.textBox85 = new System.Windows.Forms.TextBox();
+            this.textBox84 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox88 = new System.Windows.Forms.TextBox();
+            this.richTextBox35 = new System.Windows.Forms.RichTextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.textBox53 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
@@ -253,6 +288,7 @@
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.textBox48 = new System.Windows.Forms.TextBox();
+            this.textBox87 = new System.Windows.Forms.TextBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.textBox42 = new System.Windows.Forms.TextBox();
@@ -272,13 +308,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.richTextBox9 = new System.Windows.Forms.RichTextBox();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabControl6 = new System.Windows.Forms.TabControl();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.richTextBox17 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label77 = new System.Windows.Forms.Label();
-            this.textBox83 = new System.Windows.Forms.TextBox();
             this.tabPage32 = new System.Windows.Forms.TabPage();
             this.tabControl15 = new System.Windows.Forms.TabControl();
             this.tabPage33 = new System.Windows.Forms.TabPage();
@@ -288,15 +317,6 @@
             this.tabControl16 = new System.Windows.Forms.TabControl();
             this.tabPage36 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label80 = new System.Windows.Forms.Label();
-            this.textBox86 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox18 = new System.Windows.Forms.RichTextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.textBox85 = new System.Windows.Forms.TextBox();
-            this.textBox84 = new System.Windows.Forms.TextBox();
             this.tabPage37 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label66 = new System.Windows.Forms.Label();
@@ -311,6 +331,9 @@
             this.richTextBox21 = new System.Windows.Forms.RichTextBox();
             this.richTextBox20 = new System.Windows.Forms.RichTextBox();
             this.richTextBox19 = new System.Windows.Forms.RichTextBox();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label77 = new System.Windows.Forms.Label();
+            this.textBox83 = new System.Windows.Forms.TextBox();
             this.FRAME_TIMER = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
@@ -336,20 +359,24 @@
             this.panel5.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage24.SuspendLayout();
+            this.tabControl17.SuspendLayout();
+            this.tabPage40.SuspendLayout();
+            this.tabPage41.SuspendLayout();
+            this.tabPage27.SuspendLayout();
+            this.tabControl12.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            this.tabPage16.SuspendLayout();
-            this.tabControl9.SuspendLayout();
-            this.tabPage17.SuspendLayout();
-            this.tabPage18.SuspendLayout();
-            this.tabPage27.SuspendLayout();
-            this.tabControl12.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.tabControl6.SuspendLayout();
+            this.tabPage42.SuspendLayout();
+            this.tabPage43.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tabPage31.SuspendLayout();
             this.tabControl10.SuspendLayout();
             this.tabPage21.SuspendLayout();
@@ -359,18 +386,15 @@
             this.tabControl7.SuspendLayout();
             this.tabPage20.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage12.SuspendLayout();
-            this.tabControl6.SuspendLayout();
-            this.tabPage13.SuspendLayout();
             this.tabPage32.SuspendLayout();
             this.tabControl15.SuspendLayout();
             this.tabPage33.SuspendLayout();
             this.tabPage35.SuspendLayout();
             this.tabControl16.SuspendLayout();
             this.tabPage36.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tabPage37.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -383,7 +407,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(660, 24);
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -398,6 +422,7 @@
             this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
             this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.aBOUTToolStripMenuItem.Text = "ABOUT";
+            this.aBOUTToolStripMenuItem.Click += new System.EventHandler(this.aBOUTToolStripMenuItem_Click);
             // 
             // tabPage1
             // 
@@ -405,7 +430,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(653, 492);
+            this.tabPage1.Size = new System.Drawing.Size(654, 491);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cipher";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -419,14 +444,13 @@
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage27);
+            this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Location = new System.Drawing.Point(2, 2);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(656, 505);
+            this.tabControl2.Size = new System.Drawing.Size(651, 504);
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 0;
             // 
@@ -443,7 +467,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(648, 479);
+            this.tabPage2.Size = new System.Drawing.Size(643, 478);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "RDA";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -476,7 +500,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 227);
+            this.label1.Location = new System.Drawing.Point(207, 184);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -485,7 +509,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(3, 225);
+            this.numericUpDown1.Location = new System.Drawing.Point(0, 182);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(203, 20);
@@ -540,7 +564,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(648, 479);
+            this.tabPage3.Size = new System.Drawing.Size(643, 478);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "ENIGMA";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -853,20 +877,23 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(648, 479);
+            this.tabPage4.Size = new System.Drawing.Size(643, 478);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "GF(P^M)";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabControl4
             // 
+            this.tabControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl4.Controls.Add(this.tabPage8);
             this.tabControl4.Controls.Add(this.tabPage9);
             this.tabControl4.Controls.Add(this.tabPage24);
-            this.tabControl4.Location = new System.Drawing.Point(-5, 2);
+            this.tabControl4.Location = new System.Drawing.Point(-3, 2);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(657, 474);
+            this.tabControl4.Size = new System.Drawing.Size(652, 473);
             this.tabControl4.TabIndex = 24;
             // 
             // tabPage8
@@ -875,7 +902,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(649, 448);
+            this.tabPage8.Size = new System.Drawing.Size(644, 447);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "GF(P^M)";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1908,7 +1935,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(649, 448);
+            this.tabPage9.Size = new System.Drawing.Size(644, 447);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "GF(2^8)";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2104,141 +2131,56 @@
             // 
             // tabPage24
             // 
+            this.tabPage24.Controls.Add(this.tabControl17);
             this.tabPage24.Controls.Add(this.textBox71);
-            this.tabPage24.Controls.Add(this.textBox70);
-            this.tabPage24.Controls.Add(this.label81);
-            this.tabPage24.Controls.Add(this.label86);
-            this.tabPage24.Controls.Add(this.label83);
-            this.tabPage24.Controls.Add(this.label87);
-            this.tabPage24.Controls.Add(this.label82);
             this.tabPage24.Controls.Add(this.label84);
+            this.tabPage24.Controls.Add(this.label81);
             this.tabPage24.Controls.Add(this.label67);
-            this.tabPage24.Controls.Add(this.richTextBox28);
-            this.tabPage24.Controls.Add(this.richTextBox26);
-            this.tabPage24.Controls.Add(this.richTextBox27);
-            this.tabPage24.Controls.Add(this.richTextBox25);
+            this.tabPage24.Controls.Add(this.textBox70);
             this.tabPage24.Location = new System.Drawing.Point(4, 22);
             this.tabPage24.Name = "tabPage24";
-            this.tabPage24.Size = new System.Drawing.Size(649, 448);
+            this.tabPage24.Size = new System.Drawing.Size(644, 447);
             this.tabPage24.TabIndex = 2;
             this.tabPage24.Text = "MATRIX";
             this.tabPage24.UseVisualStyleBackColor = true;
             // 
-            // textBox71
+            // tabControl17
             // 
-            this.textBox71.Location = new System.Drawing.Point(478, 372);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(100, 20);
-            this.textBox71.TabIndex = 2;
-            this.textBox71.Text = "256";
-            this.textBox71.TextChanged += new System.EventHandler(this.textBox71_TextChanged_1);
+            this.tabControl17.Controls.Add(this.tabPage40);
+            this.tabControl17.Controls.Add(this.tabPage41);
+            this.tabControl17.Location = new System.Drawing.Point(-5, 0);
+            this.tabControl17.Name = "tabControl17";
+            this.tabControl17.SelectedIndex = 0;
+            this.tabControl17.Size = new System.Drawing.Size(647, 356);
+            this.tabControl17.TabIndex = 4;
             // 
-            // textBox70
+            // tabPage40
             // 
-            this.textBox70.Location = new System.Drawing.Point(478, 347);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(46, 20);
-            this.textBox70.TabIndex = 2;
-            this.textBox70.Text = "0";
-            this.textBox70.TextChanged += new System.EventHandler(this.textBox70_TextChanged_1);
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(440, 375);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(37, 13);
-            this.label81.TabIndex = 1;
-            this.label81.Text = "Z_b[x]";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(185, 215);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(13, 13);
-            this.label86.TabIndex = 1;
-            this.label86.Text = "=";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(188, 55);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(13, 13);
-            this.label83.TabIndex = 1;
-            this.label83.Text = "=";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(188, 153);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(16, 13);
-            this.label87.TabIndex = 1;
-            this.label87.Text = "-1";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(185, 6);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(16, 13);
-            this.label82.TabIndex = 1;
-            this.label82.Text = "-1";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(530, 350);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(75, 13);
-            this.label84.TabIndex = 1;
-            this.label84.Text = "19 irreducibles";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(440, 350);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(32, 13);
-            this.label67.TabIndex = 1;
-            this.label67.Text = "p(x)[i]";
-            // 
-            // richTextBox28
-            // 
-            this.richTextBox28.Font = new System.Drawing.Font("Consolas", 9F);
-            this.richTextBox28.Location = new System.Drawing.Point(224, 153);
-            this.richTextBox28.Name = "richTextBox28";
-            this.richTextBox28.Size = new System.Drawing.Size(413, 154);
-            this.richTextBox28.TabIndex = 0;
-            this.richTextBox28.Text = "6 0 6\n0 0 0\n6 0 6";
-            // 
-            // richTextBox26
-            // 
-            this.richTextBox26.Font = new System.Drawing.Font("Consolas", 9F);
-            this.richTextBox26.Location = new System.Drawing.Point(224, 3);
-            this.richTextBox26.Name = "richTextBox26";
-            this.richTextBox26.Size = new System.Drawing.Size(413, 144);
-            this.richTextBox26.TabIndex = 0;
-            this.richTextBox26.Text = resources.GetString("richTextBox26.Text");
-            // 
-            // richTextBox27
-            // 
-            this.richTextBox27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox27.Location = new System.Drawing.Point(4, 153);
-            this.richTextBox27.Name = "richTextBox27";
-            this.richTextBox27.Size = new System.Drawing.Size(175, 127);
-            this.richTextBox27.TabIndex = 0;
-            this.richTextBox27.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
-    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
-    " 48 0B\n51 5D 30 6F 70 BF C0 41";
-            this.richTextBox27.TextChanged += new System.EventHandler(this.richTextBox27_TextChanged);
+            this.tabPage40.Controls.Add(this.richTextBox25);
+            this.tabPage40.Controls.Add(this.label89);
+            this.tabPage40.Controls.Add(this.richTextBox27);
+            this.tabPage40.Controls.Add(this.label88);
+            this.tabPage40.Controls.Add(this.richTextBox26);
+            this.tabPage40.Controls.Add(this.richTextBox28);
+            this.tabPage40.Controls.Add(this.label86);
+            this.tabPage40.Controls.Add(this.label82);
+            this.tabPage40.Controls.Add(this.label83);
+            this.tabPage40.Controls.Add(this.label87);
+            this.tabPage40.Location = new System.Drawing.Point(4, 22);
+            this.tabPage40.Name = "tabPage40";
+            this.tabPage40.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage40.Size = new System.Drawing.Size(639, 330);
+            this.tabPage40.TabIndex = 0;
+            this.tabPage40.Text = "INVERSE GF";
+            this.tabPage40.UseVisualStyleBackColor = true;
             // 
             // richTextBox25
             // 
+            this.richTextBox25.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox25.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox25.Location = new System.Drawing.Point(4, 3);
+            this.richTextBox25.Location = new System.Drawing.Point(6, 22);
             this.richTextBox25.Name = "richTextBox25";
             this.richTextBox25.Size = new System.Drawing.Size(175, 123);
             this.richTextBox25.TabIndex = 0;
@@ -2247,24 +2189,461 @@
     " 48 0B\n51 5D 30 6F 70 BF C0 41";
             this.richTextBox25.TextChanged += new System.EventHandler(this.richTextBox25_TextChanged);
             // 
+            // label89
+            // 
+            this.label89.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(7, 6);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(48, 13);
+            this.label89.TabIndex = 3;
+            this.label89.Text = "GF_P_N";
+            // 
+            // richTextBox27
+            // 
+            this.richTextBox27.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox27.Location = new System.Drawing.Point(6, 172);
+            this.richTextBox27.Name = "richTextBox27";
+            this.richTextBox27.Size = new System.Drawing.Size(175, 127);
+            this.richTextBox27.TabIndex = 0;
+            this.richTextBox27.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            this.richTextBox27.TextChanged += new System.EventHandler(this.richTextBox27_TextChanged);
+            // 
+            // label88
+            // 
+            this.label88.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(7, 152);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(35, 13);
+            this.label88.TabIndex = 3;
+            this.label88.Text = "EJMA";
+            // 
+            // richTextBox26
+            // 
+            this.richTextBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox26.Font = new System.Drawing.Font("Consolas", 9F);
+            this.richTextBox26.Location = new System.Drawing.Point(226, 22);
+            this.richTextBox26.Name = "richTextBox26";
+            this.richTextBox26.Size = new System.Drawing.Size(413, 144);
+            this.richTextBox26.TabIndex = 0;
+            this.richTextBox26.Text = resources.GetString("richTextBox26.Text");
+            // 
+            // richTextBox28
+            // 
+            this.richTextBox28.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox28.Font = new System.Drawing.Font("Consolas", 9F);
+            this.richTextBox28.Location = new System.Drawing.Point(226, 169);
+            this.richTextBox28.Name = "richTextBox28";
+            this.richTextBox28.Size = new System.Drawing.Size(413, 154);
+            this.richTextBox28.TabIndex = 0;
+            this.richTextBox28.Text = resources.GetString("richTextBox28.Text");
+            // 
+            // label86
+            // 
+            this.label86.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(187, 234);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(13, 13);
+            this.label86.TabIndex = 1;
+            this.label86.Text = "=";
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(187, 25);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(16, 13);
+            this.label82.TabIndex = 1;
+            this.label82.Text = "-1";
+            // 
+            // label83
+            // 
+            this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(190, 74);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(13, 13);
+            this.label83.TabIndex = 1;
+            this.label83.Text = "=";
+            // 
+            // label87
+            // 
+            this.label87.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(190, 172);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(16, 13);
+            this.label87.TabIndex = 1;
+            this.label87.Text = "-1";
+            // 
+            // tabPage41
+            // 
+            this.tabPage41.Controls.Add(this.label99);
+            this.tabPage41.Controls.Add(this.label96);
+            this.tabPage41.Controls.Add(this.label98);
+            this.tabPage41.Controls.Add(this.label97);
+            this.tabPage41.Controls.Add(this.richTextBox32);
+            this.tabPage41.Controls.Add(this.label95);
+            this.tabPage41.Controls.Add(this.label93);
+            this.tabPage41.Controls.Add(this.label94);
+            this.tabPage41.Controls.Add(this.label91);
+            this.tabPage41.Controls.Add(this.label92);
+            this.tabPage41.Controls.Add(this.richTextBox34);
+            this.tabPage41.Controls.Add(this.richTextBox31);
+            this.tabPage41.Controls.Add(this.richTextBox33);
+            this.tabPage41.Controls.Add(this.richTextBox30);
+            this.tabPage41.Controls.Add(this.richTextBox29);
+            this.tabPage41.Controls.Add(this.label90);
+            this.tabPage41.Location = new System.Drawing.Point(4, 22);
+            this.tabPage41.Name = "tabPage41";
+            this.tabPage41.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage41.Size = new System.Drawing.Size(639, 330);
+            this.tabPage41.TabIndex = 1;
+            this.tabPage41.Text = "INVERSE CONTINUITY";
+            this.tabPage41.UseVisualStyleBackColor = true;
+            // 
+            // label99
+            // 
+            this.label99.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(374, 168);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(16, 13);
+            this.label99.TabIndex = 12;
+            this.label99.Text = "-1";
+            // 
+            // label96
+            // 
+            this.label96.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(177, 168);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(16, 13);
+            this.label96.TabIndex = 12;
+            this.label96.Text = "-1";
+            // 
+            // label98
+            // 
+            this.label98.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(377, 227);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(13, 13);
+            this.label98.TabIndex = 13;
+            this.label98.Text = "=";
+            // 
+            // label97
+            // 
+            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(180, 227);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(13, 13);
+            this.label97.TabIndex = 13;
+            this.label97.Text = "=";
+            // 
+            // richTextBox32
+            // 
+            this.richTextBox32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox32.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox32.Location = new System.Drawing.Point(5, 176);
+            this.richTextBox32.Name = "richTextBox32";
+            this.richTextBox32.Size = new System.Drawing.Size(175, 127);
+            this.richTextBox32.TabIndex = 10;
+            this.richTextBox32.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            this.richTextBox32.TextChanged += new System.EventHandler(this.richTextBox32_TextChanged);
+            // 
+            // label95
+            // 
+            this.label95.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(6, 156);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(35, 13);
+            this.label95.TabIndex = 11;
+            this.label95.Text = "EJMA";
+            // 
+            // label93
+            // 
+            this.label93.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(374, 18);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(16, 13);
+            this.label93.TabIndex = 8;
+            this.label93.Text = "-1";
+            // 
+            // label94
+            // 
+            this.label94.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(377, 77);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(13, 13);
+            this.label94.TabIndex = 9;
+            this.label94.Text = "=";
+            // 
+            // label91
+            // 
+            this.label91.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(177, 18);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(16, 13);
+            this.label91.TabIndex = 6;
+            this.label91.Text = "-1";
+            // 
+            // label92
+            // 
+            this.label92.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(180, 77);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(13, 13);
+            this.label92.TabIndex = 7;
+            this.label92.Text = "=";
+            // 
+            // richTextBox34
+            // 
+            this.richTextBox34.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox34.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox34.Location = new System.Drawing.Point(396, 176);
+            this.richTextBox34.Name = "richTextBox34";
+            this.richTextBox34.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox34.TabIndex = 4;
+            this.richTextBox34.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            // 
+            // richTextBox31
+            // 
+            this.richTextBox31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox31.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox31.Location = new System.Drawing.Point(396, 28);
+            this.richTextBox31.Name = "richTextBox31";
+            this.richTextBox31.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox31.TabIndex = 4;
+            this.richTextBox31.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            // 
+            // richTextBox33
+            // 
+            this.richTextBox33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox33.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox33.Location = new System.Drawing.Point(199, 176);
+            this.richTextBox33.Name = "richTextBox33";
+            this.richTextBox33.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox33.TabIndex = 4;
+            this.richTextBox33.Text = "21 B1 B3 E1 AD FC 02 4A\nB2 6E 01 0E BF 9E BC D7\nCA CE CA 94 81 8A BC 05\nD7 4A D4 " +
+    "E3 EF DC 32 01\n1A EB DB DA AA EB 6E CD\n5C D6 B8 24 17 23 55 F9\n3A D1 2D 2A 88 F5" +
+    " A9 4A\nEC F4 BF E5 04 2B 34 7E";
+            // 
+            // richTextBox30
+            // 
+            this.richTextBox30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox30.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox30.Location = new System.Drawing.Point(199, 28);
+            this.richTextBox30.Name = "richTextBox30";
+            this.richTextBox30.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox30.TabIndex = 4;
+            this.richTextBox30.Text = "21 B1 B3 E1 AD FC 02 4A\nB2 6E 01 0E BF 9E BC D7\nCA CE CA 94 81 8A BC 05\nD7 4A D4 " +
+    "E3 EF DC 32 01\n1A EB DB DA AA EB 6E CD\n5C D6 B8 24 17 23 55 F9\n3A D1 2D 2A 88 F5" +
+    " A9 4A\nEC F4 BF E5 04 2B 34 7E";
+            // 
+            // richTextBox29
+            // 
+            this.richTextBox29.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox29.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox29.Location = new System.Drawing.Point(5, 28);
+            this.richTextBox29.Name = "richTextBox29";
+            this.richTextBox29.Size = new System.Drawing.Size(175, 123);
+            this.richTextBox29.TabIndex = 4;
+            this.richTextBox29.Text = "37 59 0C 5B 64 20 47 3C\n57 F0 15 30 17 5B 1E 5B\n01 02 53 17 2D 40 20 35\n5C 0C 03 " +
+    "5C 51 4A 54 17\nC6 6F EA EE BE 53 07 11\n51 4E 1D 31 48 5B 02 5C\n62 17 4E 5B 26 5E" +
+    " 48 0B\n51 5D 30 6F 70 BF C0 41";
+            this.richTextBox29.TextChanged += new System.EventHandler(this.richTextBox29_TextChanged);
+            // 
+            // label90
+            // 
+            this.label90.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(6, 12);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(48, 13);
+            this.label90.TabIndex = 5;
+            this.label90.Text = "GF_P_N";
+            // 
+            // textBox71
+            // 
+            this.textBox71.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox71.Location = new System.Drawing.Point(511, 393);
+            this.textBox71.Name = "textBox71";
+            this.textBox71.Size = new System.Drawing.Size(100, 20);
+            this.textBox71.TabIndex = 2;
+            this.textBox71.Text = "256";
+            this.textBox71.TextChanged += new System.EventHandler(this.textBox71_TextChanged_1);
+            // 
+            // label84
+            // 
+            this.label84.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(563, 371);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(75, 13);
+            this.label84.TabIndex = 1;
+            this.label84.Text = "19 irreducibles";
+            // 
+            // label81
+            // 
+            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(473, 396);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(37, 13);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "Z_b[x]";
+            // 
+            // label67
+            // 
+            this.label67.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(473, 371);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(32, 13);
+            this.label67.TabIndex = 1;
+            this.label67.Text = "p(x)[i]";
+            // 
+            // textBox70
+            // 
+            this.textBox70.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox70.Location = new System.Drawing.Point(511, 368);
+            this.textBox70.Name = "textBox70";
+            this.textBox70.Size = new System.Drawing.Size(46, 20);
+            this.textBox70.TabIndex = 2;
+            this.textBox70.Text = "0";
+            this.textBox70.TextChanged += new System.EventHandler(this.textBox70_TextChanged_1);
+            // 
+            // tabPage27
+            // 
+            this.tabPage27.Controls.Add(this.tabControl12);
+            this.tabPage27.Location = new System.Drawing.Point(4, 22);
+            this.tabPage27.Name = "tabPage27";
+            this.tabPage27.Size = new System.Drawing.Size(643, 478);
+            this.tabPage27.TabIndex = 5;
+            this.tabPage27.Text = "EJMA";
+            this.tabPage27.UseVisualStyleBackColor = true;
+            // 
+            // tabControl12
+            // 
+            this.tabControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl12.Controls.Add(this.tabPage38);
+            this.tabControl12.Controls.Add(this.tabPage39);
+            this.tabControl12.Location = new System.Drawing.Point(2, 2);
+            this.tabControl12.Name = "tabControl12";
+            this.tabControl12.SelectedIndex = 0;
+            this.tabControl12.Size = new System.Drawing.Size(641, 465);
+            this.tabControl12.TabIndex = 0;
+            // 
+            // tabPage38
+            // 
+            this.tabPage38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.tabPage38.Location = new System.Drawing.Point(4, 22);
+            this.tabPage38.Name = "tabPage38";
+            this.tabPage38.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage38.Size = new System.Drawing.Size(633, 439);
+            this.tabPage38.TabIndex = 0;
+            this.tabPage38.Text = "EJMA256";
+            // 
+            // tabPage39
+            // 
+            this.tabPage39.Location = new System.Drawing.Point(4, 22);
+            this.tabPage39.Name = "tabPage39";
+            this.tabPage39.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage39.Size = new System.Drawing.Size(633, 439);
+            this.tabPage39.TabIndex = 1;
+            this.tabPage39.Text = "EJMA27";
+            this.tabPage39.UseVisualStyleBackColor = true;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tabControl3);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(648, 479);
+            this.tabPage5.Size = new System.Drawing.Size(643, 478);
             this.tabPage5.TabIndex = 3;
-            this.tabPage5.Text = "Scrambler";
+            this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.tabPage6);
             this.tabControl3.Controls.Add(this.tabPage7);
+            this.tabControl3.Controls.Add(this.tabPage13);
             this.tabControl3.Location = new System.Drawing.Point(-3, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(651, 335);
+            this.tabControl3.Size = new System.Drawing.Size(651, 467);
             this.tabControl3.TabIndex = 0;
             // 
             // tabPage6
@@ -2275,7 +2654,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(643, 309);
+            this.tabPage6.Size = new System.Drawing.Size(643, 441);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "JessShifter";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2313,7 +2692,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(643, 309);
+            this.tabPage7.Size = new System.Drawing.Size(643, 441);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Arkpay";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2343,185 +2722,140 @@
             this.textBox10.TabIndex = 0;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
-            // tabPage16
+            // tabPage13
             // 
-            this.tabPage16.Controls.Add(this.tabControl9);
-            this.tabPage16.Location = new System.Drawing.Point(4, 22);
-            this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(648, 479);
-            this.tabPage16.TabIndex = 4;
-            this.tabPage16.Text = "Caesar";
-            this.tabPage16.UseVisualStyleBackColor = true;
+            this.tabPage13.Controls.Add(this.tabControl6);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(643, 441);
+            this.tabPage13.TabIndex = 2;
+            this.tabPage13.Text = "Caesar";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
-            // tabControl9
+            // tabControl6
             // 
-            this.tabControl9.Controls.Add(this.tabPage17);
-            this.tabControl9.Controls.Add(this.tabPage18);
-            this.tabControl9.Location = new System.Drawing.Point(-6, 2);
-            this.tabControl9.Name = "tabControl9";
-            this.tabControl9.SelectedIndex = 0;
-            this.tabControl9.Size = new System.Drawing.Size(658, 474);
-            this.tabControl9.TabIndex = 0;
+            this.tabControl6.Controls.Add(this.tabPage42);
+            this.tabControl6.Controls.Add(this.tabPage43);
+            this.tabControl6.Location = new System.Drawing.Point(-2, 2);
+            this.tabControl6.Name = "tabControl6";
+            this.tabControl6.SelectedIndex = 0;
+            this.tabControl6.Size = new System.Drawing.Size(653, 439);
+            this.tabControl6.TabIndex = 0;
             // 
-            // tabPage17
+            // tabPage42
             // 
-            this.tabPage17.Controls.Add(this.richTextBox11);
-            this.tabPage17.Controls.Add(this.label52);
-            this.tabPage17.Controls.Add(this.label51);
-            this.tabPage17.Controls.Add(this.textBox62);
-            this.tabPage17.Location = new System.Drawing.Point(4, 22);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(650, 448);
-            this.tabPage17.TabIndex = 0;
-            this.tabPage17.Text = "Crack";
-            this.tabPage17.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox11
-            // 
-            this.richTextBox11.Location = new System.Drawing.Point(309, 9);
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.Size = new System.Drawing.Size(329, 294);
-            this.richTextBox11.TabIndex = 2;
-            this.richTextBox11.Text = "";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(5, 12);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(18, 13);
-            this.label52.TabIndex = 1;
-            this.label52.Text = "by";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(3, 36);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(32, 13);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "NUM";
-            // 
-            // textBox62
-            // 
-            this.textBox62.Location = new System.Drawing.Point(41, 33);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(262, 20);
-            this.textBox62.TabIndex = 0;
-            this.textBox62.TextChanged += new System.EventHandler(this.textBox62_TextChanged);
-            // 
-            // tabPage18
-            // 
-            this.tabPage18.Controls.Add(this.checkBox7);
-            this.tabPage18.Controls.Add(this.label54);
-            this.tabPage18.Controls.Add(this.label53);
-            this.tabPage18.Controls.Add(this.textBox64);
-            this.tabPage18.Controls.Add(this.textBox65);
-            this.tabPage18.Controls.Add(this.textBox63);
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Size = new System.Drawing.Size(650, 448);
-            this.tabPage18.TabIndex = 1;
-            this.tabPage18.Text = "Make";
-            this.tabPage18.UseVisualStyleBackColor = true;
+            this.tabPage42.Controls.Add(this.checkBox7);
+            this.tabPage42.Controls.Add(this.label54);
+            this.tabPage42.Controls.Add(this.label53);
+            this.tabPage42.Controls.Add(this.textBox64);
+            this.tabPage42.Controls.Add(this.textBox65);
+            this.tabPage42.Controls.Add(this.textBox63);
+            this.tabPage42.Location = new System.Drawing.Point(4, 22);
+            this.tabPage42.Name = "tabPage42";
+            this.tabPage42.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage42.Size = new System.Drawing.Size(645, 413);
+            this.tabPage42.TabIndex = 0;
+            this.tabPage42.Text = "Make";
+            this.tabPage42.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(154, 17);
+            this.checkBox7.Location = new System.Drawing.Point(158, 8);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(55, 17);
-            this.checkBox7.TabIndex = 4;
+            this.checkBox7.TabIndex = 22;
             this.checkBox7.Text = "f^-1(x)";
             this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(14, 311);
+            this.label54.Location = new System.Drawing.Point(18, 302);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(503, 13);
-            this.label54.TabIndex = 3;
+            this.label54.TabIndex = 21;
             this.label54.Text = "Please keep in mind that this is the worst cipher that everybody knows about so d" +
     "ont use it in group chats";
             // 
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(2, 18);
+            this.label53.Location = new System.Drawing.Point(6, 9);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(43, 13);
-            this.label53.TabIndex = 2;
+            this.label53.TabIndex = 20;
             this.label53.Text = "PHASE";
             // 
             // textBox64
             // 
-            this.textBox64.Location = new System.Drawing.Point(48, 15);
+            this.textBox64.Location = new System.Drawing.Point(52, 6);
             this.textBox64.Name = "textBox64";
             this.textBox64.Size = new System.Drawing.Size(100, 20);
-            this.textBox64.TabIndex = 1;
+            this.textBox64.TabIndex = 19;
             this.textBox64.Text = "170";
-            this.textBox64.TextChanged += new System.EventHandler(this.textBox64_TextChanged);
             // 
             // textBox65
             // 
-            this.textBox65.Location = new System.Drawing.Point(5, 67);
+            this.textBox65.Location = new System.Drawing.Point(9, 58);
             this.textBox65.Name = "textBox65";
             this.textBox65.Size = new System.Drawing.Size(633, 20);
-            this.textBox65.TabIndex = 0;
+            this.textBox65.TabIndex = 17;
             // 
             // textBox63
             // 
-            this.textBox63.Location = new System.Drawing.Point(5, 41);
+            this.textBox63.Location = new System.Drawing.Point(9, 32);
             this.textBox63.Name = "textBox63";
             this.textBox63.Size = new System.Drawing.Size(633, 20);
-            this.textBox63.TabIndex = 0;
-            this.textBox63.TextChanged += new System.EventHandler(this.textBox63_TextChanged);
+            this.textBox63.TabIndex = 18;
             // 
-            // tabPage27
+            // tabPage43
             // 
-            this.tabPage27.Controls.Add(this.tabControl12);
-            this.tabPage27.Location = new System.Drawing.Point(4, 22);
-            this.tabPage27.Name = "tabPage27";
-            this.tabPage27.Size = new System.Drawing.Size(648, 479);
-            this.tabPage27.TabIndex = 5;
-            this.tabPage27.Text = "EJMA";
-            this.tabPage27.UseVisualStyleBackColor = true;
+            this.tabPage43.Controls.Add(this.richTextBox11);
+            this.tabPage43.Controls.Add(this.label52);
+            this.tabPage43.Controls.Add(this.label51);
+            this.tabPage43.Controls.Add(this.textBox62);
+            this.tabPage43.Location = new System.Drawing.Point(4, 22);
+            this.tabPage43.Name = "tabPage43";
+            this.tabPage43.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage43.Size = new System.Drawing.Size(645, 413);
+            this.tabPage43.TabIndex = 1;
+            this.tabPage43.Text = "Crack";
+            this.tabPage43.UseVisualStyleBackColor = true;
             // 
-            // tabControl12
+            // richTextBox11
             // 
-            this.tabControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl12.Controls.Add(this.tabPage38);
-            this.tabControl12.Controls.Add(this.tabPage39);
-            this.tabControl12.Location = new System.Drawing.Point(2, 2);
-            this.tabControl12.Name = "tabControl12";
-            this.tabControl12.SelectedIndex = 0;
-            this.tabControl12.Size = new System.Drawing.Size(646, 466);
-            this.tabControl12.TabIndex = 0;
+            this.richTextBox11.Location = new System.Drawing.Point(311, 9);
+            this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.Size = new System.Drawing.Size(329, 294);
+            this.richTextBox11.TabIndex = 18;
+            this.richTextBox11.Text = "";
             // 
-            // tabPage38
+            // label52
             // 
-            this.tabPage38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.tabPage38.Location = new System.Drawing.Point(4, 22);
-            this.tabPage38.Name = "tabPage38";
-            this.tabPage38.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage38.Size = new System.Drawing.Size(638, 440);
-            this.tabPage38.TabIndex = 0;
-            this.tabPage38.Text = "EJMA256";
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(7, 12);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(18, 13);
+            this.label52.TabIndex = 16;
+            this.label52.Text = "by";
             // 
-            // tabPage39
+            // label51
             // 
-            this.tabPage39.Location = new System.Drawing.Point(4, 22);
-            this.tabPage39.Name = "tabPage39";
-            this.tabPage39.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage39.Size = new System.Drawing.Size(638, 440);
-            this.tabPage39.TabIndex = 1;
-            this.tabPage39.Text = "EJMA27";
-            this.tabPage39.UseVisualStyleBackColor = true;
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(5, 36);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(32, 13);
+            this.label51.TabIndex = 17;
+            this.label51.Text = "NUM";
+            // 
+            // textBox62
+            // 
+            this.textBox62.Location = new System.Drawing.Point(43, 33);
+            this.textBox62.Name = "textBox62";
+            this.textBox62.Size = new System.Drawing.Size(262, 20);
+            this.textBox62.TabIndex = 15;
             // 
             // tabControl1
             // 
@@ -2534,7 +2868,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(661, 518);
+            this.tabControl1.Size = new System.Drawing.Size(662, 517);
             this.tabControl1.TabIndex = 22;
             // 
             // tabPage10
@@ -2542,23 +2876,37 @@
             this.tabPage10.Controls.Add(this.tabControl5);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(653, 492);
+            this.tabPage10.Size = new System.Drawing.Size(654, 491);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Craft";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // tabControl5
             // 
+            this.tabControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl5.Controls.Add(this.tabPage11);
             this.tabControl5.Controls.Add(this.tabPage31);
+            this.tabControl5.Controls.Add(this.tabPage12);
             this.tabControl5.Location = new System.Drawing.Point(0, 3);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(655, 489);
+            this.tabControl5.Size = new System.Drawing.Size(661, 489);
             this.tabControl5.TabIndex = 0;
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.label80);
+            this.tabPage11.Controls.Add(this.textBox86);
+            this.tabPage11.Controls.Add(this.button4);
+            this.tabPage11.Controls.Add(this.button3);
+            this.tabPage11.Controls.Add(this.richTextBox18);
+            this.tabPage11.Controls.Add(this.label79);
+            this.tabPage11.Controls.Add(this.label78);
+            this.tabPage11.Controls.Add(this.textBox85);
+            this.tabPage11.Controls.Add(this.textBox84);
+            this.tabPage11.Controls.Add(this.panel6);
             this.tabPage11.Controls.Add(this.label42);
             this.tabPage11.Controls.Add(this.textBox53);
             this.tabPage11.Controls.Add(this.textBox52);
@@ -2568,16 +2916,142 @@
             this.tabPage11.Controls.Add(this.textBox49);
             this.tabPage11.Controls.Add(this.label40);
             this.tabPage11.Controls.Add(this.textBox48);
+            this.tabPage11.Controls.Add(this.textBox87);
             this.tabPage11.Controls.Add(this.textBox43);
             this.tabPage11.Controls.Add(this.label37);
             this.tabPage11.Controls.Add(this.textBox42);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(647, 463);
+            this.tabPage11.Size = new System.Drawing.Size(653, 463);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Num";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(602, 191);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(37, 13);
+            this.label80.TabIndex = 25;
+            this.label80.Text = "Z_b[x]";
+            // 
+            // textBox86
+            // 
+            this.textBox86.Location = new System.Drawing.Point(604, 207);
+            this.textBox86.Name = "textBox86";
+            this.textBox86.Size = new System.Drawing.Size(35, 20);
+            this.textBox86.TabIndex = 24;
+            this.textBox86.Text = "256";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(585, 160);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(54, 22);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "solve";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(585, 136);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 22);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "solve";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // richTextBox18
+            // 
+            this.richTextBox18.Location = new System.Drawing.Point(292, 188);
+            this.richTextBox18.Name = "richTextBox18";
+            this.richTextBox18.Size = new System.Drawing.Size(309, 269);
+            this.richTextBox18.TabIndex = 21;
+            this.richTextBox18.Text = resources.GetString("richTextBox18.Text");
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(289, 165);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(24, 13);
+            this.label79.TabIndex = 19;
+            this.label79.Text = "hex";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(289, 141);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(25, 13);
+            this.label78.TabIndex = 20;
+            this.label78.Text = "dec";
+            // 
+            // textBox85
+            // 
+            this.textBox85.Location = new System.Drawing.Point(331, 162);
+            this.textBox85.Name = "textBox85";
+            this.textBox85.Size = new System.Drawing.Size(245, 20);
+            this.textBox85.TabIndex = 17;
+            this.textBox85.Text = "18 EE 69 21 92 4E";
+            // 
+            // textBox84
+            // 
+            this.textBox84.Location = new System.Drawing.Point(331, 138);
+            this.textBox84.Name = "textBox84";
+            this.textBox84.Size = new System.Drawing.Size(245, 20);
+            this.textBox84.TabIndex = 18;
+            this.textBox84.Text = "1 2 3 4 5 6";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.textBox88);
+            this.panel6.Controls.Add(this.richTextBox35);
+            this.panel6.Controls.Add(this.label100);
+            this.panel6.Controls.Add(this.button5);
+            this.panel6.Location = new System.Drawing.Point(10, 140);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(276, 317);
+            this.panel6.TabIndex = 16;
+            // 
+            // textBox88
+            // 
+            this.textBox88.Location = new System.Drawing.Point(92, 3);
+            this.textBox88.Name = "textBox88";
+            this.textBox88.Size = new System.Drawing.Size(100, 20);
+            this.textBox88.TabIndex = 12;
+            // 
+            // richTextBox35
+            // 
+            this.richTextBox35.Location = new System.Drawing.Point(7, 30);
+            this.richTextBox35.Name = "richTextBox35";
+            this.richTextBox35.Size = new System.Drawing.Size(249, 282);
+            this.richTextBox35.TabIndex = 15;
+            this.richTextBox35.Text = "";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(3, 6);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(82, 13);
+            this.label100.TabIndex = 13;
+            this.label100.Text = "Type an Integer";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(198, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(58, 21);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "solve";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label42
             // 
@@ -2654,12 +3128,20 @@
             this.textBox48.TabIndex = 3;
             this.textBox48.TextChanged += new System.EventHandler(this.textBox48_TextChanged);
             // 
+            // textBox87
+            // 
+            this.textBox87.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox87.Location = new System.Drawing.Point(477, 8);
+            this.textBox87.Name = "textBox87";
+            this.textBox87.Size = new System.Drawing.Size(142, 20);
+            this.textBox87.TabIndex = 2;
+            // 
             // textBox43
             // 
             this.textBox43.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox43.Location = new System.Drawing.Point(364, 9);
             this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(255, 20);
+            this.textBox43.Size = new System.Drawing.Size(107, 20);
             this.textBox43.TabIndex = 2;
             // 
             // label37
@@ -2685,7 +3167,7 @@
             this.tabPage31.Controls.Add(this.tabControl10);
             this.tabPage31.Location = new System.Drawing.Point(4, 22);
             this.tabPage31.Name = "tabPage31";
-            this.tabPage31.Size = new System.Drawing.Size(647, 463);
+            this.tabPage31.Size = new System.Drawing.Size(653, 463);
             this.tabPage31.TabIndex = 3;
             this.tabPage31.Text = "Decode";
             this.tabPage31.UseVisualStyleBackColor = true;
@@ -2694,7 +3176,6 @@
             // 
             this.tabControl10.Controls.Add(this.tabPage21);
             this.tabControl10.Controls.Add(this.tabPage15);
-            this.tabControl10.Controls.Add(this.tabPage12);
             this.tabControl10.Controls.Add(this.tabPage32);
             this.tabControl10.Controls.Add(this.tabPage35);
             this.tabControl10.Location = new System.Drawing.Point(-6, -3);
@@ -2851,73 +3332,6 @@
             this.richTextBox9.Text = "";
             this.richTextBox9.TextChanged += new System.EventHandler(this.richTextBox9_TextChanged);
             // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.tabControl6);
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(651, 444);
-            this.tabPage12.TabIndex = 2;
-            this.tabPage12.Text = "Num";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // tabControl6
-            // 
-            this.tabControl6.Controls.Add(this.tabPage13);
-            this.tabControl6.Location = new System.Drawing.Point(-6, 0);
-            this.tabControl6.Name = "tabControl6";
-            this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(661, 445);
-            this.tabControl6.TabIndex = 0;
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.richTextBox17);
-            this.tabPage13.Controls.Add(this.button2);
-            this.tabPage13.Controls.Add(this.label77);
-            this.tabPage13.Controls.Add(this.textBox83);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(653, 419);
-            this.tabPage13.TabIndex = 0;
-            this.tabPage13.Text = "Integer";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox17
-            // 
-            this.richTextBox17.Location = new System.Drawing.Point(4, 32);
-            this.richTextBox17.Name = "richTextBox17";
-            this.richTextBox17.Size = new System.Drawing.Size(249, 380);
-            this.richTextBox17.TabIndex = 3;
-            this.richTextBox17.Text = "";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(195, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 21);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "solve";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(1, 9);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(82, 13);
-            this.label77.TabIndex = 1;
-            this.label77.Text = "Type an Integer";
-            // 
-            // textBox83
-            // 
-            this.textBox83.Location = new System.Drawing.Point(89, 6);
-            this.textBox83.Name = "textBox83";
-            this.textBox83.Size = new System.Drawing.Size(100, 20);
-            this.textBox83.TabIndex = 0;
-            // 
             // tabPage32
             // 
             this.tabPage32.Controls.Add(this.tabControl15);
@@ -3003,102 +3417,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label80);
-            this.panel3.Controls.Add(this.textBox86);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.richTextBox18);
-            this.panel3.Controls.Add(this.label79);
-            this.panel3.Controls.Add(this.label78);
-            this.panel3.Controls.Add(this.textBox85);
-            this.panel3.Controls.Add(this.textBox84);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(652, 426);
             this.panel3.TabIndex = 0;
             this.panel3.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel3_DragDrop);
             this.panel3.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel3_DragEnter);
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(321, 59);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(37, 13);
-            this.label80.TabIndex = 10;
-            this.label80.Text = "Z_b[x]";
-            // 
-            // textBox86
-            // 
-            this.textBox86.Location = new System.Drawing.Point(364, 56);
-            this.textBox86.Name = "textBox86";
-            this.textBox86.Size = new System.Drawing.Size(35, 20);
-            this.textBox86.TabIndex = 9;
-            this.textBox86.Text = "256";
-            this.textBox86.TextChanged += new System.EventHandler(this.textBox86_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(321, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(54, 22);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "solve";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(321, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 22);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "solve";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // richTextBox18
-            // 
-            this.richTextBox18.Location = new System.Drawing.Point(6, 56);
-            this.richTextBox18.Name = "richTextBox18";
-            this.richTextBox18.Size = new System.Drawing.Size(309, 356);
-            this.richTextBox18.TabIndex = 7;
-            this.richTextBox18.Text = "18 EE 69 21 92 4E\n64 75 E9 A5 F9 58\n4F 85 BA 00 1A F3";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(3, 33);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(24, 13);
-            this.label79.TabIndex = 5;
-            this.label79.Text = "hex";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(3, 9);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(25, 13);
-            this.label78.TabIndex = 6;
-            this.label78.Text = "dec";
-            // 
-            // textBox85
-            // 
-            this.textBox85.Location = new System.Drawing.Point(45, 30);
-            this.textBox85.Name = "textBox85";
-            this.textBox85.Size = new System.Drawing.Size(270, 20);
-            this.textBox85.TabIndex = 3;
-            this.textBox85.Text = "18 EE 69 21 92 4E";
-            // 
-            // textBox84
-            // 
-            this.textBox84.Location = new System.Drawing.Point(45, 6);
-            this.textBox84.Name = "textBox84";
-            this.textBox84.Size = new System.Drawing.Size(270, 20);
-            this.textBox84.TabIndex = 4;
-            this.textBox84.Text = "1 2 3 4 5 6";
-            this.textBox84.TextChanged += new System.EventHandler(this.textBox84_TextChanged);
             // 
             // tabPage37
             // 
@@ -3240,6 +3564,36 @@
             this.richTextBox19.Text = "1 2 3 4\n5 6 7 8\n9 1 2 3\n4 5 6 7";
             this.richTextBox19.TextChanged += new System.EventHandler(this.richTextBox19_TextChanged);
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.label77);
+            this.tabPage12.Controls.Add(this.textBox83);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(653, 463);
+            this.tabPage12.TabIndex = 4;
+            this.tabPage12.Text = "Color";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(6, 10);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(66, 13);
+            this.label77.TabIndex = 1;
+            this.label77.Text = "Color (RGB):";
+            // 
+            // textBox83
+            // 
+            this.textBox83.Location = new System.Drawing.Point(78, 7);
+            this.textBox83.Name = "textBox83";
+            this.textBox83.Size = new System.Drawing.Size(100, 20);
+            this.textBox83.TabIndex = 0;
+            this.textBox83.Text = "196 64 255";
+            this.textBox83.TextChanged += new System.EventHandler(this.textBox83_TextChanged);
+            // 
             // FRAME_TIMER
             // 
             this.FRAME_TIMER.Interval = 333;
@@ -3249,13 +3603,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 538);
+            this.ClientSize = new System.Drawing.Size(660, 537);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "CipherCraft";
+            this.Text = "Quaeritur565";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -3290,25 +3644,32 @@
             this.tabPage9.PerformLayout();
             this.tabPage24.ResumeLayout(false);
             this.tabPage24.PerformLayout();
+            this.tabControl17.ResumeLayout(false);
+            this.tabPage40.ResumeLayout(false);
+            this.tabPage40.PerformLayout();
+            this.tabPage41.ResumeLayout(false);
+            this.tabPage41.PerformLayout();
+            this.tabPage27.ResumeLayout(false);
+            this.tabControl12.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            this.tabPage16.ResumeLayout(false);
-            this.tabControl9.ResumeLayout(false);
-            this.tabPage17.ResumeLayout(false);
-            this.tabPage17.PerformLayout();
-            this.tabPage18.ResumeLayout(false);
-            this.tabPage18.PerformLayout();
-            this.tabPage27.ResumeLayout(false);
-            this.tabControl12.ResumeLayout(false);
+            this.tabPage13.ResumeLayout(false);
+            this.tabControl6.ResumeLayout(false);
+            this.tabPage42.ResumeLayout(false);
+            this.tabPage42.PerformLayout();
+            this.tabPage43.ResumeLayout(false);
+            this.tabPage43.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabPage31.ResumeLayout(false);
             this.tabControl10.ResumeLayout(false);
             this.tabPage21.ResumeLayout(false);
@@ -3320,21 +3681,17 @@
             this.tabPage20.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage12.ResumeLayout(false);
-            this.tabControl6.ResumeLayout(false);
-            this.tabPage13.ResumeLayout(false);
-            this.tabPage13.PerformLayout();
             this.tabPage32.ResumeLayout(false);
             this.tabControl15.ResumeLayout(false);
             this.tabPage33.ResumeLayout(false);
             this.tabPage35.ResumeLayout(false);
             this.tabControl16.ResumeLayout(false);
             this.tabPage36.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.tabPage37.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3430,20 +3787,6 @@
         private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.CheckBox custom;
-        private System.Windows.Forms.TabPage tabPage16;
-        private System.Windows.Forms.TabControl tabControl9;
-        private System.Windows.Forms.TabPage tabPage17;
-        private System.Windows.Forms.RichTextBox richTextBox11;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox textBox62;
-        private System.Windows.Forms.TabPage tabPage18;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox65;
-        private System.Windows.Forms.TextBox textBox63;
         private System.Windows.Forms.TextBox textBox66;
         private System.Windows.Forms.CheckBox plugboard;
         private System.Windows.Forms.TabPage tabPage19;
@@ -3560,13 +3903,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RichTextBox richTextBox9;
-        private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.TabControl tabControl6;
-        private System.Windows.Forms.TabPage tabPage13;
-        private System.Windows.Forms.TextBox textBox83;
-        private System.Windows.Forms.RichTextBox richTextBox17;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label77;
         private System.Windows.Forms.TabPage tabPage32;
         private System.Windows.Forms.TabControl tabControl15;
         private System.Windows.Forms.TabPage tabPage33;
@@ -3576,16 +3912,7 @@
         private System.Windows.Forms.TabControl tabControl16;
         private System.Windows.Forms.TabPage tabPage36;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox richTextBox18;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.TextBox textBox85;
-        private System.Windows.Forms.TextBox textBox84;
         private System.Windows.Forms.TabPage tabPage37;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.TextBox textBox86;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RichTextBox richTextBox21;
         private System.Windows.Forms.RichTextBox richTextBox20;
@@ -3625,6 +3952,59 @@
         private System.Windows.Forms.TabControl tabControl12;
         private System.Windows.Forms.TabPage tabPage38;
         private System.Windows.Forms.TabPage tabPage39;
+        private System.Windows.Forms.TextBox textBox87;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TabControl tabControl17;
+        private System.Windows.Forms.TabPage tabPage40;
+        private System.Windows.Forms.TabPage tabPage41;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.RichTextBox richTextBox31;
+        private System.Windows.Forms.RichTextBox richTextBox30;
+        private System.Windows.Forms.RichTextBox richTextBox29;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.RichTextBox richTextBox32;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.RichTextBox richTextBox34;
+        private System.Windows.Forms.RichTextBox richTextBox33;
+        private System.Windows.Forms.RichTextBox richTextBox35;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TextBox textBox88;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox textBox83;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.TabControl tabControl6;
+        private System.Windows.Forms.TabPage tabPage42;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.TextBox textBox65;
+        private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.TabPage tabPage43;
+        private System.Windows.Forms.RichTextBox richTextBox11;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox textBox62;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox textBox86;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox richTextBox18;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox textBox85;
+        private System.Windows.Forms.TextBox textBox84;
     }
 }
 

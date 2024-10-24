@@ -52,6 +52,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Rubiks_cube.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,6 +74,7 @@
     <Compile Include="Debug\Debug.cs" />
     <Compile Include="Debug\Fonts.cs" />
     <Compile Include="Debug\Frame.cs" />
+    <Compile Include="Decode\Color_Decode.cs" />
     <Compile Include="Decode\File\Data_Analysis.cs" />
     <Compile Include="Decode\Dictionary.cs" />
     <Compile Include="Decode\Image\ImageDecode.cs" />
@@ -102,6 +106,8 @@
     <Compile Include="GaloisField\GF_P_N.cs" />
     <Compile Include="GaloisField\IRR.cs" />
     <Compile Include="GaloisField\Matrix.cs" />
+    <Compile Include="Graphic\ExtBitmap.cs" />
+    <Compile Include="Graphic\BitmapTools.cs" />
     <Compile Include="Print.cs" />
     <Compile Include="NBase.cs" />
     <Compile Include="PolyDiv.cs" />
@@ -140,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Decode\Word\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rubiks_cube.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

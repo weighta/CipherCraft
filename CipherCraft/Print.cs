@@ -75,6 +75,16 @@ namespace CipherCraft
             }
             return ret;
         }
+        public static string ARR_TO_STR_HEX(int[] a)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                ret += a[i].ToString("X2");
+                if (i < a.Length - 1) ret += " ";
+            }
+            return ret;
+        }
         public static string ARR_TO_STR(int[][] a)
         {
             string ret = "";
@@ -85,6 +95,15 @@ namespace CipherCraft
                     ret += a[i][j] + " ";
                 }
                 ret += "\n";
+            }
+            return ret;
+        }
+        public static string hashToString(byte[] a)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                ret += a[i].ToString("X2");
             }
             return ret;
         }
@@ -202,15 +221,15 @@ namespace CipherCraft
         public static int[][] strToNumArray(string[] a, int format)
         {
             int[][] ret = new int[a.Length][];
-            if (format == 16)
-            {
-                for (int i = 0; i < a.Length; i++)
+                if (format == 16)
                 {
-                    string[] b = a[i].Split(' ');
-                    ret[i] = new int[b.Length];
-                    for (int j = 0; j < ret[i].Length; j++) ret[i][j] = Convert.ToInt32(b[j], format);
+                    for (int i = 0; i < a.Length; i++)
+                    {
+                        string[] b = a[i].Split(' ');
+                        ret[i] = new int[b.Length];
+                        for (int j = 0; j < ret[i].Length; j++) ret[i][j] = Convert.ToInt32(b[j], format);
+                    }
                 }
-            }
             return ret;
         }
         public static string byteArrayToString(byte[][] a)
@@ -237,6 +256,20 @@ namespace CipherCraft
                 {
                     if (j != 0) ret += ' ';
                     ret += ((byte)a[i][j]).ToString("X2");
+                }
+            }
+            return ret;
+        }
+        public static string intArrayToHexadecimalStringTrunc(int[][] a)
+        {
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i != 0) ret += '\n';
+                for (int j = a[i].Length >> 1; j < a[i].Length; j++)
+                {
+                    ret += ((byte)a[i][j]).ToString("X2");
+                    if (j != a[i].Length - 1) ret += ' ';
                 }
             }
             return ret;

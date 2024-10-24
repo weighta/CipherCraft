@@ -137,6 +137,84 @@ lol a e u i ch 8 N U I Z ì Tw F Y A B Djtá X | H O Kg nn m Ly</value>
 00 00 00 00 00 00 01 00 3A D1 2D 2A 88 F5 A9 4A
 00 00 00 00 00 00 00 01 EC F4 BF E5 04 2B 34 7E</value>
   </data>
+  <data name="richTextBox28.Text" xml:space="preserve">
+    <value>37 03 8E C3 9F 99 18 70 21 B1 B3 E1 AD FC 02 4A
+57 09 69 74 08 9C 3E 75 B2 6E 01 0E BF 9E BC D7
+01 01 0F 33 B1 18 59 B3 CA CE CA 94 81 8A BC 05
+5C E8 13 8E 4B DE 05 81 D7 4A D4 E3 EF DC 32 01
+C6 3E 33 A7 C7 C4 D1 C0 1A EB DB DA AA EB 6E CD
+51 BD 46 9B 03 88 C5 B1 5C D6 B8 24 17 23 55 F9
+62 B1 17 F8 EE 50 E0 70 3A D1 2D 2A 88 F5 A9 4A
+51 AE 1A 1E 80 08 43 81 EC F4 BF E5 04 2B 34 7E</value>
+  </data>
+  <data name="richTextBox18.Text" xml:space="preserve">
+    <value>sum: 624
+avg: 104
+std_dev: 79.7972430601459
+The polynomial p(x) = 24 238 105 33 146 78 of degree 5 has no general formula to solve roots.
+num (256): 27412245090894
+No galois fields found with 8bit stride
+
+GF Inverse Matricies Found Over Z_2[8]:
+
+0: C4 43 C4 47 A6 0D  with p(x) = 283
+1: A1 92 F8 14 9B 8E  with p(x) = 285
+2: 93 07 AC 09 12 7F  with p(x) = 299
+3: D7 91 7E 97 DF 96  with p(x) = 301
+4: 37 19 AF 0E AD 8B  with p(x) = 313
+5: B2 A3 FF 86 1D 3E  with p(x) = 319
+6: 83 D7 06 B9 FF 12  with p(x) = 333
+7: C0 19 90 CA 41 13  with p(x) = 351
+8: F3 0A A0 F1 23 A0  with p(x) = 355
+9: BE 32 7F B6 87 7D  with p(x) = 357
+10: 25 A3 26 4E 58 D3  with p(x) = 361
+11: C4 87 A6 88 C6 09  with p(x) = 369
+12: 75 62 54 31 87 8F  with p(x) = 375
+13: 84 40 2E 58 F3 C8  with p(x) = 379
+14: 8F 4D 49 B7 7D E9  with p(x) = 391
+15: E0 67 4A FC 9B 2F  with p(x) = 395
+16: 53 58 65 D8 95 5E  with p(x) = 397
+17: 54 AB 65 5E 8A AA  with p(x) = 415
+18: B2 90 84 18 52 D4  with p(x) = 419
+19: 1B 23 AD A9 D7 E6  with p(x) = 425
+20: 0B 97 3D 77 95 80  with p(x) = 433
+21: 8A FB F8 77 ED FB  with p(x) = 445
+22: 58 BB 4D E9 14 B9  with p(x) = 451
+23: 1C 8C 4B 06 04 89  with p(x) = 463
+24: DC D8 9B 85 13 F4  with p(x) = 471
+25: D2 32 70 3E F3 9F  with p(x) = 477
+26: 68 14 86 54 C6 FE  with p(x) = 487
+27: 6A 73 5E 1E 11 19  with p(x) = 499
+28: 66 14 24 AF B3 5A  with p(x) = 501
+29: 7E 6F 20 81 63 6D  with p(x) = 505
+30/30
+
+Dictionary with reduction Z_0[26]
+opot (0, 1)
+
+
+Dictionary with reduction Z_3[27]
+engr (0, 7)
+gris (2, 7)
+luft (0, 21)
+
+
+Dictionary with reduction Z_29[29]
+bone (1, 17)
+vlit (1, 10)
+
+
+Dictionary with reduction Z_31[31]
+ngen (2, 24)
+
+
+Dictionary with reduction Z_5[25]
+buyi (0, 27)
+ebon (0, 26)
+iwai (2, 13)
+
+</value>
+  </data>
   <metadata name="FRAME_TIMER.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>

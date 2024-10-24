@@ -69,7 +69,7 @@ namespace CipherCraft
                 sum += Math.Pow(a[i] - avg, 2);
             }
             stdd = Math.Sqrt(sum / (a.Length - 1));
-            logadd("standard deviation: " + stdd);
+            logadd("std_dev: " + stdd);
         }
         void STAT()
         {

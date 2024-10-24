@@ -35,6 +35,7 @@ namespace CipherCraft
         Integer integer = new Integer();
         NumberSetGFDecode numsetgfdecode = new NumberSetGFDecode();
         EJMA256 ejma = new EJMA256();
+        Color_Decode cd = new Color_Decode();
 
         public Form1()
         {
@@ -42,9 +43,10 @@ namespace CipherCraft
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabControl2.SelectTab(5);
-            Form2 form2 = new Form2();
-            form2.Show();
+            colorUpdate();
+            //tabControl2.SelectTab(5);
+            //Form2 form2 = new Form2();
+            //form2.Show();
         }
 
         void RDA_TAB()
@@ -410,6 +412,7 @@ namespace CipherCraft
             try
             {
                 textBox43.Text = Print.ARR_TO_STR(Print.SentToNum(textBox42.Text));
+                textBox87.Text = Print.ARR_TO_STR_HEX(Print.SentToNum(textBox42.Text));
             }
             catch
             {
@@ -882,11 +885,10 @@ namespace CipherCraft
         }
         void solveInt()
         {
-
             try
             {
-                integer.Open(longnum(textBox83.Text));
-                richTextBox17.Text = integer.getLog();
+                integer.Open(longnum(textBox88.Text));
+                richTextBox35.Text = integer.getLog();
             }
             catch
             {
@@ -1002,13 +1004,12 @@ namespace CipherCraft
         }
         void invMat()
         {
-            EJMA();
-            int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox25.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
-            richTextBox26.Text = Print.intArrayToHexadecimalString(gfp_n.aug);
-            label84.Text = gfp_n.irr_.Length + " irreducibles";
+
             try
             {
-
+                int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox25.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
+                richTextBox26.Text = Print.intArrayToHexadecimalString(gfp_n.aug);
+                label84.Text = gfp_n.irr_.Length + " irreducibles";
             }
             catch
             {
@@ -1033,9 +1034,16 @@ namespace CipherCraft
 
         void EJMA()
         {
-            byte[] poop = Print.strToByteArray(richTextBox27.Text);
-            ejma.R_GFM(ref poop, num(textBox70.Text));
-            richTextBox28.Text = ejma.GFM_ToString();
+            try
+            {
+                byte[] poop = Print.strToByteArray(richTextBox27.Text);
+                ejma.R_GFM(ref poop, num(textBox70.Text));
+                richTextBox28.Text = ejma.GFM_ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         private void panel6_DragEnter(object sender, DragEventArgs e)
@@ -1049,6 +1057,70 @@ namespace CipherCraft
         private void panel6_DragDrop(object sender, DragEventArgs e)
         {
             string path = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
+        }
+
+        private void richTextBox29_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox29.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
+                richTextBox30.Text = Print.intArrayToHexadecimalStringTrunc(gfp_n.aug);
+                int[][] junk1 = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox30.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
+                richTextBox31.Text = Print.intArrayToHexadecimalStringTrunc(gfp_n.aug);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void richTextBox32_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] poop = Print.strToByteArray(richTextBox32.Text);
+                ejma.R_GFM(ref poop, num(textBox70.Text));
+                richTextBox33.Text = ejma.GFM_ToStringTrunc();
+
+                byte[] poop1 = Print.strToByteArray(richTextBox33.Text);
+                ejma.R_GFM(ref poop1, num(textBox70.Text));
+                richTextBox34.Text = ejma.GFM_ToStringTrunc();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            solveInt();
+        }
+
+        private void textBox83_TextChanged(object sender, EventArgs e)
+        {
+            colorUpdate();
+        }
+        void colorUpdate()
+        {
+            Color c = Color.FromArgb(0, 0, 0);
+            try
+            {
+                string[] colorString = textBox83.Text.Split(' ');
+                c = Color.FromArgb(num(colorString[0]), num(colorString[1]), num(colorString[2]));
+            }
+            catch
+            {
+
+            }
+            tabControl5.TabPages[2].Controls.Remove(cd.colorPanel);
+            cd.Decode(c);
+            tabControl5.TabPages[2].Controls.Add(cd.colorPanel);
+        }
+
+        private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

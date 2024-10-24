@@ -107,10 +107,11 @@ namespace CipherCraft
             this.Rounds.Size = new System.Drawing.Size(107, 20);
             this.Rounds.TabIndex = 24;
             this.Rounds.Value = new decimal(new int[] {
-            30,
+            8,
             0,
             0,
             0});
+            this.Rounds.ValueChanged += new System.EventHandler(this.Rounds_ValueChanged);
             // 
             // progressBar2
             // 
@@ -197,6 +198,7 @@ namespace CipherCraft
             this.Password.Size = new System.Drawing.Size(235, 20);
             this.Password.TabIndex = 17;
             this.Password.Text = "football123";
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // button6
             // 
@@ -225,6 +227,7 @@ namespace CipherCraft
             this.Decrypt_Files.TabIndex = 13;
             this.Decrypt_Files.Text = "Decrypt";
             this.Decrypt_Files.UseVisualStyleBackColor = false;
+            this.Decrypt_Files.Click += new System.EventHandler(this.Decrypt_Files_Click);
             // 
             // Encrypt_Files
             // 
