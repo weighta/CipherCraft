@@ -71,14 +71,15 @@
   <ItemGroup>
     <Compile Include="Cipher\EJMA256.cs" />
     <Compile Include="Crack\Caesar.cs" />
-    <Compile Include="Debug\Debug.cs" />
-    <Compile Include="Debug\Fonts.cs" />
-    <Compile Include="Debug\Frame.cs" />
+    <Compile Include="Frame\Debug.cs" />
+    <Compile Include="Frame\Fonts.cs" />
+    <Compile Include="Frame\Frame.cs" />
     <Compile Include="Decode\Color_Decode.cs" />
     <Compile Include="Decode\File\Data_Analysis.cs" />
     <Compile Include="Decode\Dictionary.cs" />
     <Compile Include="Decode\Image\ImageDecode.cs" />
     <Compile Include="Decode\Image\Black and White\Image_GF_Analysis.cs" />
+    <Compile Include="Decode\MatrixGFeXtrap.cs" />
     <Compile Include="Decode\Number Set\GF\NumberSetGFDecode.cs" />
     <Compile Include="Decode\Number Set\NumberSetDecoder.cs" />
     <Compile Include="Decode\Number\Integer.cs" />
@@ -101,6 +102,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GaloisField\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GaloisField\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="GaloisField\GF_2_8.cs" />
     <Compile Include="GaloisField\GF_2_N.cs" />
     <Compile Include="GaloisField\GF_P_N.cs" />
@@ -108,6 +115,8 @@
     <Compile Include="GaloisField\Matrix.cs" />
     <Compile Include="Graphic\ExtBitmap.cs" />
     <Compile Include="Graphic\BitmapTools.cs" />
+    <Compile Include="Graphic\GraphicalBase.cs" />
+    <Compile Include="Graphic\MatrixGraphics.cs" />
     <Compile Include="Print.cs" />
     <Compile Include="NBase.cs" />
     <Compile Include="PolyDiv.cs" />
@@ -121,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GaloisField\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

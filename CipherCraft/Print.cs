@@ -29,12 +29,12 @@ namespace CipherCraft
         public static int[] ByteARRToIntARR(byte[] a)
         {
             int[] r = new int[a.Length >> 2];
-            for (int i = 0; i < r.Length; i++)
+            for (int i = 0; i < a.Length; i += 4)
             {
-                r[i] |= a[(i << 2)] >> 24;
-                r[i] |= a[(i << 2) + 1] >> 16;
-                r[i] |= a[(i << 2) + 2] >> 8;
-                r[i] |= a[(i << 2) + 3];
+                r[i >> 2] |= a[i] << 24;
+                r[i >> 2] |= a[i + 1] << 16;
+                r[i >> 2] |= a[i + 2] << 8;
+                r[i >> 2] |= a[i + 3];
             }
             return r;
         }
@@ -69,6 +69,16 @@ namespace CipherCraft
         {
             string ret = "";
             for (int i = 0; i < a.Length; i++)
+            {
+                ret += a[i];
+                if (i < a.Length - 1) ret += " ";
+            }
+            return ret;
+        }
+        public static string ARR_TO_STR(int[] a, int len)
+        {
+            string ret = "";
+            for (int i = 0; i < len; i++)
             {
                 ret += a[i];
                 if (i < a.Length - 1) ret += " ";
@@ -245,6 +255,30 @@ namespace CipherCraft
                 }
             }
             return ret;    
+        }
+        public static string intArrayToHexadecimalString(int[][] a, int GF)
+        {
+            string format = "2";
+            if (GF > 256)
+            {
+                format = "4";
+                if (GF > 65536)
+                {
+                    format = "6";
+                    if (GF > 16777216) format = "8";
+                }
+            }
+            string ret = "";
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (i != 0) ret += '\n';
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    if (j != 0) ret += ' ';
+                    ret += (a[i][j]).ToString("X" + format);
+                }
+            }
+            return ret;
         }
         public static string intArrayToHexadecimalString(int[][] a)
         {

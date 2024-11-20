@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Threading;
+using System.Windows.Forms.Design;
 
 namespace CipherCraft
 {
@@ -33,20 +33,57 @@ namespace CipherCraft
         Paragraph_Analysis para = new Paragraph_Analysis();
         FieldHopper fh = new FieldHopper();
         Integer integer = new Integer();
-        NumberSetGFDecode numsetgfdecode = new NumberSetGFDecode();
+        NumberSetGFDecode numsetgfdecode;
         EJMA256 ejma = new EJMA256();
         Color_Decode cd = new Color_Decode();
+        MatrixGFeXtrap matEx;
+        Dictionary dict;
 
+        GraphicalBase[] gb;
+        Timer timer1 = new Timer();
+
+        int threadCount = 8;
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            dict = new Dictionary(pictureBox2);
+            numsetgfdecode = new NumberSetGFDecode(gfp_n, dict);
+            matEx = new MatrixGFeXtrap(gfp_n, numsetgfdecode, pictureBox2);
+            matEx.controlToPrintTo = richTextBox37;
+            gb = new GraphicalBase[2] { matEx, dict };
             colorUpdate();
-            //tabControl2.SelectTab(5);
-            //Form2 form2 = new Form2();
-            //form2.Show();
+            timer1.Interval = 333;
+            timer1.Tick += new EventHandler(timer_tick);
+        }
+        void timer_tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gb.Length; i++)
+            {
+                if (gb[i].isLogAvailable())
+                {
+                    richTextBox36.Text = gb[i].getLog();
+                }
+                if (gb[i].isProgress1Available())
+                {
+                    progressBar1.Value = gb[i].getProgress1();
+                }
+                if (gb[i].isProgress2Available())
+                {
+                    progressBar2.Value = gb[i].getProgress2();
+                }
+                if (gb[i].isProgress3Available())
+                {
+                    progressBar3.Value = gb[i].getProgress3();
+                }
+                if (gb[i].isProblemSolved())
+                {
+                    gb[i].controlToPrintTo.Text = gb[i].getFinishText();
+                    timer1.Enabled = false;
+                }
+            }
         }
 
         void RDA_TAB()
@@ -65,13 +102,7 @@ namespace CipherCraft
         {
             richTextBox2.Text = RDA.textEncrypter(richTextBox1.Text, textBox1.Text, (int)numericUpDown1.Value);
         }
-        void VISUAL_DISPLAY()
-        {
-            if (checkBox1.Checked)
-            {
-                FRAME_TIMER.Enabled = true;
-            }
-        }
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -80,30 +111,11 @@ namespace CipherCraft
         {
 
         }
-        private void FRAME_TIMER_TICK(object sender, EventArgs e)
-        {
-            switch (ALGO_INDEX)
-            {
-                case 0:
-                    {
-                        if (!RDA_UI.IDLE)
-                        {
-                            RDA_UI.refresh();
-                            pictureBox1.Image = RDA_UI.FRAME.BACKGROUND;
-                        }
-                        else
-                        {
-                            FRAME_TIMER.Enabled = false;
-                        }
-                        break;
-                    }
-            }
-        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ALGO_INDEX = 0;
-            VISUAL_DISPLAY();
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -251,8 +263,8 @@ namespace CipherCraft
                 int b = num(textBox26.Text);
                 int irr_index = num(textBox27.Text);
                 gfp_n.IRRSet(gf2_n.pow(p, k));
-                textBox23.Text = gfp_n.mul(p, k, a, b, gfp_n.getIRRbyIndex(p, k, irr_index)) + "";
-                label85.Text = Print.ARR_TO_STR(NBASE.rep(gfp_n.getIRRbyIndex(p, k, irr_index), p));
+                textBox23.Text = gfp_n.mul(p, k, a, b, gfp_n.getIRRbyIndex(p, irr_index)) + "";
+                label85.Text = Print.ARR_TO_STR(NBASE.rep(gfp_n.getIRRbyIndex(p, irr_index), p));
             }
             catch
             {
@@ -380,7 +392,7 @@ namespace CipherCraft
                 int p = num(textBox24.Text);
                 int k = num(textBox22.Text);
                 gfp_n.IRRSet((int)Math.Pow(p, k));
-                int irr = gfp_n.getIRRbyIndex(p, k, num(textBox40.Text));
+                int irr = gfp_n.getIRRbyIndex(p, num(textBox40.Text));
                 gfp_n.mulFastSet(p, k, irr);
                 int[][] ans = gfp_n.GaloisMatMulFast(Matrix.squareMat(Print.strToIntArr(textBox38.Text)), Matrix.rowToColumn(Print.strToIntArr(textBox39.Text)), p, k, irr);
                 label68.Text = "(" + irr + ")";
@@ -1004,11 +1016,19 @@ namespace CipherCraft
         }
         void invMat()
         {
-
             try
             {
-                int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox25.Text.Split('\n'), 16), num(textBox71.Text), num(textBox70.Text));
-                richTextBox26.Text = Print.intArrayToHexadecimalString(gfp_n.aug);
+                int GF = num(textBox71.Text);
+                gfp_n.IRRSet(GF);
+                int irr_index = num(textBox70.Text) % gfp_n.irr_.Length;
+                int[] GF_dec = gfp_n.decField(GF);
+                int p = GF_dec[0];
+                int k = GF_dec[1];
+
+                label104.Text = "[" + irr_index + "] = " + Print.ARR_TO_STR(NBASE.rep(gfp_n.getIRRbyIndex(p, irr_index), p)) + " = " + gfp_n.getIRRbyIndex(p, irr_index);
+                label103.Text = "GF(" + p + "^" + k + ")";
+                int[][] junk = gfp_n.GaloisFieldMatINVFull(Print.strToNumArray(richTextBox25.Text.Split('\n'), 16), GF, irr_index);
+                richTextBox26.Text = Print.intArrayToHexadecimalString(gfp_n.aug, GF);
                 label84.Text = gfp_n.irr_.Length + " irreducibles";
             }
             catch
@@ -1121,6 +1141,101 @@ namespace CipherCraft
         private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox89_TextChanged(object sender, EventArgs e)
+        {
+            decField();
+        }
+        void decField()
+        {
+            try
+            {
+                int field = num(textBox89.Text);
+                int[] pk = gfp_n.decField(field);
+                textBox90.Text = pk[0] + "";
+                textBox91.Text = pk[1] + "";
+            }
+            catch { }
+        }
+        private void textBox92_TextChanged(object sender, EventArgs e)
+        {
+            bool init = false;
+            int[] fields = new int[0];
+            if (textBox92.Text.Contains("-"))
+            {
+                try
+                {
+                    string[] numString = textBox92.Text.Split('-');
+
+                    fields = gfp_n.getAllFields(num(numString[0]), num(numString[1]));
+                    init = true;
+                }
+                catch { }
+            }
+            else
+            {
+                try
+                {
+                    fields = new int[1] { num(textBox92.Text) };
+                    init = true;
+                }
+                catch { }
+            }
+            if (init)
+            {
+                string txt = "";
+                for (int i = 0; i < fields.Length; i++)
+                {
+                    txt += fields[i];
+                    if (i != fields.Length - 1) txt += " ";
+                }
+                label106.Text = txt;
+            }
+        }
+
+        private void textBox93_TextChanged(object sender, EventArgs e)
+        {
+            threadCount = num(textBox93.Text);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            invEx();
+        }
+        void invEx()
+        {
+            int[][] mat = Print.strToNumArray(richTextBox17.Text.Split('\n'), 16);
+            int[] fields = new int[0];
+            try
+            {
+                if (label106.Text.Contains(" "))
+                {
+                    string[] f = label106.Text.Split(' ');
+                    fields = new int[f.Length];
+                    for (int i = 0; i < f.Length; i++)
+                    {
+                        fields[i] = num(f[i]);
+                    }
+                }
+                else fields = new int[1] { num(label106.Text) };
+            }
+            catch
+            {
+                fields = new int[1] { 64 };
+            }
+            timer1.Enabled = true;
+            matEx.SolveData(fields, mat, threadCount);
+        }
+
+
+        private void richTextBox36_TextChanged(object sender, EventArgs e)
+        {
+            //a little stack overflow help https://stackoverflow.com/questions/9416608/rich-text-box-scroll-to-the-bottom-when-new-data-is-written-to-it
+            // set the current caret position to the end
+            richTextBox36.SelectionStart = richTextBox36.Text.Length;
+            // scroll it automatically
+            richTextBox36.ScrollToCaret();
         }
     }
 }

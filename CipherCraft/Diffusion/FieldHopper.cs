@@ -59,14 +59,14 @@ namespace CipherCraft
         public void GFmatMulData(int GF, int irr_index, int[] a, ref int[] text)
         {
             gfp_n.decField(GF, ref fieldDec);
-            db += "GF(" + fieldDec[0] + "^" + fieldDec[1] + ") p(x) = " + gfp_n.getIRRbyIndex(fieldDec[0], fieldDec[1], irr_index) + " mat: " + Print.ARR_TO_STR(a) +  "\n";
+            db += "GF(" + fieldDec[0] + "^" + fieldDec[1] + ") p(x) = " + gfp_n.getIRRbyIndex(fieldDec[0], irr_index) + " mat: " + Print.ARR_TO_STR(a) +  "\n";
             int bNumColumns = text.Length / a.Length;
             int[][] b = new int[a.Length][];
             for (int i = 0; i < b.Length; i++){
                 b[i] = new int[bNumColumns];
             }
 
-            gfp_n.GaloisMatMulFastFastSet(fieldDec[0], fieldDec[1], gfp_n.getIRRbyIndex(fieldDec[0], fieldDec[1], irr_index), a.Length, bNumColumns);
+            gfp_n.GaloisMatMulFastFastSet(fieldDec[0], fieldDec[1], gfp_n.getIRRbyIndex(fieldDec[0], irr_index), a.Length, bNumColumns);
             for (int i = 0; i < bNumColumns; i++)
             {
                 for (int j = 0; j < a.Length; j++)

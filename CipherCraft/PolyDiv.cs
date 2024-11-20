@@ -124,7 +124,6 @@ namespace CipherCraft
                 for (int i = 0; i < b_.Length; i++) b[i] = b_[i];
             }
             int h = b.Length - 1;
-            int l = a.Length - 1;
             int QUO_LEN = (a.Length - b.Length) + 1;
             int div = b[0];
             for (int i = 1; i < b.Length; i++) //divisor negate term n-1 coef through 0th
@@ -177,14 +176,12 @@ namespace CipherCraft
             return ret;
         }
 
-
         void dbDiv()
         {
             MessageBox.Show(Print.ARR_TO_STR(MON) + "\n" + Print.ARR_TO_STR(RES));
         }
 
-
-        public int[] DIV_REM(int[] a, int[] b)
+        public int[] DIV_REM(int[] a, int[] b) //dividend, divisor
         {
             int[] RES = new int[b.Length - 1];
             int[] QUO = DIV(a, b);

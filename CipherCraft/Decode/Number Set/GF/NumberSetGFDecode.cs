@@ -23,22 +23,26 @@ namespace CipherCraft
         public int p;
         public int k;
         public int irr_index;
+        public int irr;
     }
+
     public class NumberSetGFDecode : NumberSetDecoder
     {
-        GF_P_N gfp_n = new GF_P_N();
+        public GF_P_N gfp_n;
         IRR irr = new IRR();
-        Dictionary dict = new Dictionary();
-        ReductionField[] RF;
+        public Dictionary dict;
+        public ReductionField[] RF;
 
         List<GF> gf;
         List<INV_MAT> invs;
         int[] Z_b = new int[2] { 2, 8 };
         int n;
 
-        public NumberSetGFDecode()
+        public NumberSetGFDecode(GF_P_N gfp_n, Dictionary dict)
         {
-
+            this.gfp_n = gfp_n;
+            this.dict = dict;
+            setReductionAlphabetical();
         }
 
         public NumberSetGFDecode(int[] a, int Z_b) : base(a)
@@ -104,7 +108,7 @@ namespace CipherCraft
             for (int i = 0; i < len; i++)
             {
                 //Print.say( Z_b[0] + " " + Z_b[1] + " " + i);
-                int[] inv = gfp_n.GaloisFieldMatINVFAST(a, Z_b[0], Z_b[1], gfp_n.getIRRbyIndex(Z_b[0], Z_b[1], i));
+                int[] inv = gfp_n.GaloisFieldMatINVFAST(a, Z_b[0], Z_b[1], gfp_n.getIRRbyIndex(Z_b[0], i));
                 tmp = new INV_MAT();
                 tmp.A = inv;
                 tmp.irr_used = i;
@@ -116,12 +120,12 @@ namespace CipherCraft
                 string add = "";
                 for (int i = 0; i < invs.Count; i++)
                 {
-                    add += invs[i].irr_used + ": " + Print.intARRtoHexStr(invs[i].A) + " with p(x) = " + gfp_n.getIRRbyIndex(Z_b[0], Z_b[1], invs[i].irr_used) + "\n";
+                    add += invs[i].irr_used + ": " + Print.intARRtoHexStr(invs[i].A) + " with p(x) = " + gfp_n.getIRRbyIndex(Z_b[0], invs[i].irr_used) + "\n";
                 }
                 logadd("GF Inverse Matricies Found Over Z_" + invs[0].Z_b[0] + "[" + invs[0].Z_b[1] + "]:\n\n" + add + invs.Count + "/" + gfp_n.irr_.Length + "\n");
             }
         }
-        void dictInvMATS()
+        public void setReductionAlphabetical()
         {
             RF = new ReductionField[5];
             for (int i = 0; i < RF.Length; i++) RF[i] = new ReductionField();
@@ -149,8 +153,15 @@ namespace CipherCraft
             RF[4].p = 5;
             RF[4].k = 2;
             RF[4].irr_index = 0;
+        }
 
+        public char[] reduce(int[] a, int reduct_ind)
+        {
+            return gfp_n.ReducetoChars(a, RF[reduct_ind].n, RF[reduct_ind].p, RF[reduct_ind].k, RF[reduct_ind].irr_index, 97);
+        }
 
+        public void dictInvMATS()
+        {
             int phase = 97;
             int[][] buffer = new int[invs.Count][];
             for (int i = 0; i < buffer.Length; i++)
