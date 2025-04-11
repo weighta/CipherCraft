@@ -1,5 +1,5 @@
 # CipherCraft
-Use modern cryptography techniques to experiment with sentences, data, and more!
+Use modern cryptography for sentences and data!
 
 Polynomial and Finite Field calculator
 
